@@ -35,23 +35,26 @@ insert into people(fname,lname,email) values
 ;;-------------------------------------------------------- REQUEST HANDLING
 
 (defn handle-people [_req]
-  {:status 200 :body "people" :headers {"Content-Type" "application/json"}})
+  {:status 200
+   :headers {"Content-Type" "application/edn"}
+   :body (pr-str [{:fname "Rich" :email "rich@example.com"}
+                  {:fname "Rich 2" :email "rich2@example.com"}])})
 
 (defn api-handler [req]
   (cond
-    (not= (:method req) :POST)
-    {:status 400 :body "Only POST supported"}
+    ;; (not= (:method req) :POST)
+    ;; {:status 400 :body "Only POST supported"}
     
-    (re-matches #"/api/people" (:uri req))
+    (re-find #"/api/people" (:uri req))
     (handle-people req)))
 
 (defn handler [req]  
   (def *req req)
   (cond
-    (re-matches #"^/api/" (:uri req))
+    (re-find #"^/api/" (:uri req))
     (api-handler req)
     
-    (re-matches #"^/?$" (:uri req))
+    (re-find #"^/?$" (:uri req))
     {:status 302 :headers {"location" "/index.html"}}
     
     :else
@@ -71,4 +74,6 @@ insert into people(fname,lname,email) values
       (.browse (java.awt.Desktop/getDesktop) (java.net.URI. uri))
       (catch java.awt.HeadlessException _))))
 
-(comment (-main))
+(comment 
+  (-main)
+  (app {:uri "/api/people" :method :post :body "[]"}))
