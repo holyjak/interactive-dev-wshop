@@ -1,0 +1,29 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        ring/ring {:mvn/version "1.8.0"}
+        com.h2database/h2 {:mvn/version "1.4.200"}
+        seancorfield/next.jdbc {:mvn/version "1.1.547"}
+        
+        lilactown/helix {:mvn/version "0.0.12"}}
+        ;ring/ring-defaults {:mvn/version "0.3.2"}}
+        ;ring/ring-core {:mvn/version "1.8.0"}
+        ;ring/ring-jetty-adapter {:mvn/version "1.8.0"}
+        ;ring/ring-json {:mvn/version "0.5.0"}
+
+ :aliases
+ {:frontend {:extra-paths ["frontend/src/main"]
+             :extra-deps  {thheller/shadow-cljs                {:mvn/version "2.8.94"}
+                           binaryage/devtools                  {:mvn/version "1.0.0"}
+                           }}
+  :server {:main-opts ["-m" "interactive.server"]}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "0.10.0"}}}
+  :runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}
+  :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "0.5.2"}}
+            :main-opts ["-m" "hf.depstar.uberjar" "interactive-dev-wshop.jar"
+                        "-C" "-m" "holyjak.interactive-dev-wshop"]}}}

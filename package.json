@@ -1,0 +1,14 @@
+{
+  "name": "interactive-dev-wshop",
+  "version": "1.0.0",
+  "dependencies": {
+    "fomantic-ui-css": "^2.8.6",
+    "react": "16.13.1",
+    "react-dom": "^16.13.1",
+    "react-refresh": "0.8.1",
+    "semantic-ui-react": "^0.88.2"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.10.13"
+  }
+}

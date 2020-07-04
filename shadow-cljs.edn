@@ -1,0 +1,20 @@
+;; shadow-cljs configuration
+{:deps {:aliases [:frontend]}
+ 
+ :dependencies
+ []
+
+ :builds
+ {:main     {:target     :browser
+             :output-dir "resources/public/js/main"
+             :asset-path "/js/main"
+             :dev        {:compiler-options {:output-feature-set :es6}}
+             :modules    {:main {:init-fn interactive.ui/init}}
+                       ;; Preact not quite working for some reason, even though simple Fulcro demos do work
+             #_#_
+             :js-options {:resolve
+                          {"js-joda-timezone"
+                           {:target  :npm
+                            :require "js-joda-timezone/dist/js-joda-timezone-10-year-range.min.js"}}}
+             :devtools   {:preloads   [shadow.remote.runtime.cljs.browser]
+                          #_#_:after-load interactive.ui/refresh}}}}
