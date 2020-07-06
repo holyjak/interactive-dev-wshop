@@ -12,3 +12,7 @@
 resources/public/js
 .shadow-cljs/
 .clj-kondo/.cache
+temporary.trace.db
+semantic.json
+temporary.mv.db
+package-lock.json
