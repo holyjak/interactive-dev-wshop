@@ -10,9 +10,9 @@
 .hgignore
 .hg/
 resources/public/js
+!resources/public/js/main/main.js
 .shadow-cljs/
 .clj-kondo/.cache
-temporary.trace.db
 semantic.json
-temporary.mv.db
 package-lock.json
+people.trace.db

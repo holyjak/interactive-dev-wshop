@@ -11,8 +11,7 @@
 ;;-------------------------------------------------------- DATABASE (DO NOT TOUCH!)
 
 ;; A connection to an in-memory SQL database
-(def ds
-  (jdbc/get-datasource {:dbtype "h2" :dbname "temporary"}))
+(def ds (jdbc/get-datasource {:dbtype "h2" :dbname "people"}))
 
 (defn fetch-all-people []
   (jdbc/execute! ds ["SELECT * from people"]))
@@ -23,22 +22,8 @@
   (jdbc/execute! ds ["UPDATE people SET fname=? WHERE id=?" first-name id]))
 
 (comment
-  ;; TODO Move it off to a separate file, load upon start, add "reset" instructions
-  (jdbc/execute! ds ["
-create table people (
-  id int auto_increment primary key,
-  fname varchar(32),
-  lname varchar (32),
-  email varchar(255)
-)"])
+  (fetch-all-people))
 
-  (jdbc/execute! ds ["
-insert into people(fname,lname,email) values
-  ('Rich', 'Hickey','rich@example.com'),
-  ('Stu', 'Halloway','stu@example.com'),
-  ('Zach', 'Tellman','zach@example.com')"])
-
-  nil)
 ;;-------------------------------------------------------- REQUEST HANDLING
 
 (defn handle-people [_req]
