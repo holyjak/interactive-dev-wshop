@@ -3,6 +3,7 @@
   {:author "Jakub Holý"}
   (:require
    [clojure.edn :as edn]
+   [clojure.string :as str]
    [next.jdbc :as jdbc]
    [ring.adapter.jetty]
    [ring.middleware.resource]))
@@ -41,7 +42,6 @@ insert into people(fname,lname,email) values
 ;;-------------------------------------------------------- REQUEST HANDLING
 
 (defn handle-people [_req]
-  (println "_req" _req)
   ;; TODO Fetch the people from the DB using `fetch-all-people` and `map` it to what the UI wants 
   {:status 200
    :headers {"Content-Type" "text/plain"}
@@ -50,7 +50,7 @@ insert into people(fname,lname,email) values
                                     :email (:PEOPLE/EMAIL p)}))) #_[{:fname "Rich" :email "rich@example.com"}])})
 
 (defn handle-person [req]
-  (let [id (->> req :uri (re-find #"^/api/person/(.*)") second)]
+  (let [id (str/replace-first (:uri req) "/api/person/" "")]
     ;; TODO Find the person in the DB using `fetch-all-people` and `filter` and `first` and transform it into the form the UI wants
     {:status 200
      :headers {"Content-Type" "text/plain"}
@@ -63,7 +63,7 @@ insert into people(fname,lname,email) values
 
 (defn handle-person-update [req]
   ;; TODO Find the person in the DB using `fetch-all-people` and `filter` and `first`
-  (let [email (->> req :uri (re-find #"^/api/person/(.*)") second)
+  (let [email (str/replace-first (:uri req) "/api/person/" "")
         person    (->> (fetch-all-people)
                        (filter (fn [p] (= email (:PEOPLE/EMAIL p))))
                        (first))
@@ -75,16 +75,16 @@ insert into people(fname,lname,email) values
 
 (defn api-handler [req]
   (cond
-    (re-find #"^/api/people$" (:uri req))
+    (= (:uri req) "/api/people")
     (handle-people req)
 
     (and
-     (re-find #"^/api/person/" (:uri req))
+     (str/starts-with? (:uri req) "/api/person/")
      (= :post (:request-method req)))
     (handle-person req)
 
     (and
-     (re-find #"^/api/person/" (:uri req))
+     (str/starts-with? (:uri req) "/api/person/")
      (= :put (:request-method req)))
     (handle-person-update req)
 
@@ -93,10 +93,10 @@ insert into people(fname,lname,email) values
 
 (defn handler [req]
   (cond
-    (re-find #"^/api/" (:uri req))
+    (str/starts-with? (:uri req) "/api/")
     (api-handler req)
 
-    (re-find #"^/?$" (:uri req))
+    (or (= "" (:uri req)) (= "/" (:uri req)))
     {:status 302 :headers {"location" "/index.html"}}
 
     :else
