@@ -12,6 +12,7 @@
    [clojure.edn :as edn]
    [clojure.string :as str]
    [next.jdbc :as jdbc]
+   [next.jdbc.result-set :as jdbc-rs]
    [ring.adapter.jetty]
    [ring.middleware.resource]))
 
@@ -22,6 +23,7 @@
   ;; You can send an expression from here to the REPL by placing your cursor on it
   ;; and ctrl-alt-c SPACE
   ;; We will use it after the walk-through to get our hands dirty with some Clojure as a warm-up.
+  ;; TIP: Open and browse through Cheatsheet.md now to get familiar with it.
   
   ;; ## Try these: ##
   ;; 1. Define a map called person with :name John and :age 42
@@ -30,11 +32,17 @@
   
   ;; 3. Verify that the person's age is 42 (tip: use `=`)
   
+  ;; 3. Make an anonymous function that takes a single argument and returns it as-is
+  
+  ;; 4. Make the function `fortytwo?` that takes a person and tells you whether s/he is 42 (tip: use `def`, `fn`)
+  
   ;; 4. Define a vector of numbers 40 - 45 called nums
   
-  ;; 5. Remove 42 from it (tip: use `fn` and `filter`)
+  ;; 5. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
   
-  ;; 6. Increase each element by 3 and get the first one (tip: use `map`, `+`, and `first`)
+  ;; 6. Increase each element by of nums 3 and get the first one (use `map`, `+`, and `first`)
+  ;;    Tip: Do this in 3 steps, trying each step before coding further: 
+  ;;    1. map over nums; 2. extract the first element; 3. refactor the code leveraging `->>`
   )
 
 ;;-------------------------------------------------------- DATABASE (DO NOT TOUCH!)
@@ -44,7 +52,7 @@
 (def ds (jdbc/get-datasource {:dbtype "h2" :dbname "people"}))
 
 (defn fetch-all-people []
-  (jdbc/execute! ds ["SELECT * from people"]))
+  (jdbc/execute! ds ["SELECT * from people"] {:builder-fn jdbc-rs/as-unqualified-maps}))
 
 (defn update-person-first-name [id first-name]
   (assert id "id is required")
@@ -64,11 +72,14 @@
   ;;      Lesson: Capturing args for REPL interaction/focused invocation, change without restart/ui reloads. 
   ;;
   ;; TODO Task 2: Replace the hardcoded data with data from the DB =>
-  ;;      Use the REPL to find out what the DB returns, `map` it into what the UI expects.
+  ;;      Use the REPL to find out what does `(fetch-all-people)` return, `map` it into what the UI expects.
+  ;;      Tip: Use a `(comment ...)` block to play with the data until it does what you want.
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
+  ;(def req' req)
   {:status 200
    :headers {"Content-Type" "text/plain"}
-   :body (pr-str [])})
+   :body (pr-str [{:fname "John" :email "snow@example.com"}
+                  {:fname "John 2" :email "2@example.com"}])})
 
 (defn handle-person [req email]
   ;; TODO Task 3: Find the requested person in the DB =>

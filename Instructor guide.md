@@ -8,16 +8,26 @@ Agenda
 
 Why are we doing this? What will you gain? What are we going to do?
 
+> Interactive, REPL-driven development is about developing your application _while_ it is running,
+without ever restarting it. It is about trying out each new tiny snippet of code _in the context of the running application_ (i.e. with access to its data, state, and connections) and thus about growing the code in a series of small, tested steps.
+>
+> What is a REPL? An acronym for Read-Eval-Print-Loop and you can think of it as a coding terminal into your running application: you send it commands and new code and get back data.
+
 ### Brief Clojure syntax intro
 
-Talk through the [Clojure syntax intro slides](doc/Clojure%20syntax%20intro%20slides.pdf).
+1. Talk through the [Clojure syntax intro slides](doc/Clojure%20syntax%20intro%20slides.pdf).
+2. Browse through the [Cheatsheet](Cheatsheet.md), focus on the map literal and getting data out
 
 ### Get up and running!
 
 Is everybody ready, with the prerequisities (this folder, VS Code + Calva, Docker)?
 Has everybody browsed through the README and the Cheatsheet?
 
-Start the server, browse to [localhost:8088](http://localhost:8088/).
+Is everybody familiar with map and filter?
+
+Everybody & me: Start the server, browse to [localhost:8088](http://localhost:8088/).
+
+(Self: Ready to develop handle-people?)
 
 ### Code walk-through
 
@@ -32,6 +42,9 @@ Guide the people through the tasks in the top comment block.
 #### Guided task 1
 
 Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... .
+
+TIP: Forget to eval the fn after you add a def => explain we need 1. eval fn, 2. then repeat the UI action, 3. our req' is ready
+TIP 2: Also forget to eval the fn after you implement it :-)
 
 #### Individual work on tasks 2-4
 
