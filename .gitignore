@@ -16,3 +16,4 @@ resources/public/js
 semantic.json
 package-lock.json
 people.trace.db
+docker/deps.edn

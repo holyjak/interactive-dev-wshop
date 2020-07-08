@@ -2,9 +2,11 @@
 
 ## Instructions
 
-### Prerequisities
+### Preparation prior to the workshop
 
-Docker, VS Code with the Calva plugin, a local copy of https://github.com/holyjak/interactive-dev-wshop.
+Instal Docker, [VS Code](https://code.visualstudio.com/) and its Clojure [plugin Calva](https://code.visualstudio.com/), get a local copy of https://github.com/holyjak/interactive-dev-wshop. Execute `docker run -it holyjak/interactive-dev-wshop /bin/echo` to download the workshop Docker container.
+
+Next, read briefly through this file.
 
 ### Intro
 
@@ -30,17 +32,23 @@ The tasks are described in more detail in the code. Only briefly:
 
 ## Running the server and working with Calva
 
-### Running the server
+### Running the REPL
 
-Open `server.clj` (Go - Go to file).
+Start the server: menu - Terminal - New Terminal, in it execute `./docker/run-docker.sh` (or the one-liner from that file)
+(Note: Some output and errors will be printed out in this terminal.)
 
-View - Command Palette - type "Calva Conn" and select "Connect [..] in Project" then choose "Clojure CLI".
+### Connecting to the server REPL
 
-Follow the instructions in the open window to load the current file into the REPL.
+Open `server.clj` (menu - Go - Go to file).
 
-    $ clojure -m holyjak.interactive-dev-wshop
+Menu - View - Command Palette - type "Calva Conn" and select "Connect [..] in Project" then choose "Clojure CLI" then connec to `localhost:52162`.
 
-Navigate to the frontend at [localhost:8088](http://localhost:8088/).
+Follow the instructions in the newly opened "CLJ REPL" tab to load the current file into the REPL, i.e. switch back to `server.clj` and type `Ctrl+Alt+C Enter`.
+(This should switch the bottom view from "Terminal" to "Output" and you should see some info there.)
+
+Now, inside `server.clj`, put your cursor on the line `(-main)` nearly at the very end if the file and evaluate it in the REPL via `Ctrl+Alt+C SPACE`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the Output.
+
+Navigate to the frontend at [localhost:8088](http://localhost:8088/). You should see the Interactive development workshop webapp.
 
 ### Working with Calva
 
