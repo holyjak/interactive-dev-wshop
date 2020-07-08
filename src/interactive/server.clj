@@ -68,33 +68,21 @@
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
   {:status 200
    :headers {"Content-Type" "text/plain"}
-   :body (pr-str (->> (fetch-all-people)
-                      (map (fn [p] {:fname (:PEOPLE/FNAME p)
-                                    :email (:PEOPLE/EMAIL p)}))))})
+   :body (pr-str [])})
 
 (defn handle-person [req email]
   ;; TODO Task 3: Find the requested person in the DB =>
   ;;      Use `->>`, `fetch-all-people `and `filter` and `first` and transform it into the form the UI wants.
   ;;      Lesson: Capture arguments as a global var, evolve the code via trying snippets in the REPL.
-  {:status 200
+  {:status 500
     :headers {"Content-Type" "text/plain"}
-    :body (pr-str (->> (fetch-all-people)
-                      (filter (fn [p] (= email (:PEOPLE/EMAIL p))))
-                      (map (fn [p] {:fname (:PEOPLE/FNAME p)
-                                    :lname (:PEOPLE/LNAME p)
-                                    :email (:PEOPLE/EMAIL p)}))
-                      (first)))})
+    :body (pr-str "Not implemented")})
 
 (defn handle-person-update [req email]
   ;; TODO Task 4: Update the person in the DB based on the request
   ;;      => Find out what the request contains and use the same approach as above to find the person.
   ;;         then use `update-person-first-name` to update him/her. Tip: Use `let`.
-  (let [person    (->> (fetch-all-people)
-                       (filter (fn [p] (= email (:PEOPLE/EMAIL p))))
-                       (first))
-        id    (:PEOPLE/ID person)]
-    (update-person-first-name id (-> req :body :fname))
-    {:status 200 :headers {"Content-Type" "text/plain"}}))
+  {:status 500 :headers {"Content-Type" "text/plain"} :body (pr-str "Not implemented")})
 
 ;;-------------------------------------------------------- ROUTING, SERVER ETC. (DO NOT TOUCH)
 ;; Routing of requests to the appropriate handler above,
