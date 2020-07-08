@@ -20,29 +20,29 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 
 ## Definitions and functions
 
-`def` - `(def <name> <value>)` - create a global "constant" (a "var" in Clojure speak)
+[`def`](https://clojuredocs.org/clojure.core/def) - `(def <name> <value>)` - create a global "constant" (a "var" in Clojure speak)
 
-`fn` - `(fn [arg1 arg2 ...] <body>)` - define a function
+[`fn`](https://clojuredocs.org/clojure.core/fn) - `(fn [arg1 arg2 ...] <body>)` - define a function
 
-`defn` - ± same as `(def my-name (fn [...] ...))`
+[`defn`](https://clojuredocs.org/clojure.core/defn) - ± same as `(def my-name (fn [...] ...))`
 
 ## Collections and sequences
 
-`map` - `(map <function> <sequence>)` - change each element
+[`map`](https://clojuredocs.org/clojure.core/map) - `(map <function> <sequence>)` - change each element
 
-`filter` - `(filter <sequence>)` - keep only elements the function returns anything but nil/false for
+[`filter`](https://clojuredocs.org/clojure.core/filter) - `(filter <sequence>)` - keep only elements the function returns anything but nil/false for
 
-`first` - `(first <sequence>)` - return the first element of the sequence
+[`first`](https://clojuredocs.org/clojure.core/first) - `(first <sequence>)` - return the first element of the sequence
 
 ## Logic and comparison
 
-`=` - `(= arg1 arg2 ...)` - are all the arguments equal?
+[`=`](https://clojuredocs.org/clojure.core/%3D) - `(= arg1 arg2 ...)` - are all the arguments equal?
 
-`if` - `(if condition true-expression false-expression)` (`false-expression` defaults to `nil`)
+[`if`](https://clojuredocs.org/clojure.core/if) - `(if condition true-expression false-expression)` (`false-expression` defaults to `nil`)
 
 ## Flow control
 
-`->>` - `(->> input (fn1) (fn2) ...)` - a transformation pipeline, "threading" data through a series of functions (transformations). Invokes fn1 with the input as the last argument, then fn2 with the result of that as the last argument etc. Example:
+[`->>`](https://clojuredocs.org/clojure.core/->>) - `(->> input (fn1) (fn2) ...)` - a transformation pipeline, "threading" data through a series of functions (transformations). Invokes fn1 with the input as the last argument, then fn2 with the result of that as the last argument etc. Example:
 
 ```clojure
 (->> 6
@@ -52,7 +52,7 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 ```
 
 
-`let` - `(let [var1 value1, ...] body)` - introduce local constants (bindings). Example below:
+[`let`](https://clojuredocs.org/clojure.core/let) - `(let [var1 value1, ...] body)` - introduce local constants (bindings). Example below:
 
 ```clojure
 (let [five 5
@@ -62,6 +62,6 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 
 ## REPL troubleshooting
 
-`println` - print the thing(s)
+[`println`](https://clojuredocs.org/clojure.core/println) - print the thing(s)
 
-`pr-str`  - print Clojure data into a string so that Clojure can read them back
+[`pr-str`](https://clojuredocs.org/clojure.core/pr-str)  - print Clojure data into a string so that Clojure can read them back
