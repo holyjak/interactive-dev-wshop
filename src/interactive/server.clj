@@ -79,8 +79,7 @@
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
   {:status 200
    :headers {"Content-Type" "text/plain"}
-   :body (pr-str [{:fname "John" :email "snow@example.com"}
-                  {:fname "John 2" :email "2@example.com"}])})
+   :body (pr-str [])})
 
 (defn handle-person 
   "Return the data needed when an 'Edit' button is pressed."
