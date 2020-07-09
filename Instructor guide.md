@@ -4,6 +4,14 @@ Instructor guide
 Agenda
 ------
 
+### Note on timing
+
+From experience, with junior developers:
+
+* From start to the warm-up exercise: ~ 1/2h
+* Warm-up: ~1h - 1h30
+* Tasks:  ~1.5h (but can stop anytime)
+
 ### Brief intro
 
 Why are we doing this? What will you gain? What are we going to do?
@@ -35,7 +43,11 @@ Everybody opens `src/interactive/server.clj`, walk through the code briefly, foc
 
 ### Coding warm-up
 
-Guide the people through the tasks in the top comment block.
+Everybody should open the Cheatsheet (preview, not .md) next to the editor or have a printout.
+They should read through it so that they know what is where and can find it.
+They should review the _Calva shortcuts_ from the README and, ideally, have them readily available.
+
+Let the people go through the tasks in the top comment block, walking around, checking on them, helping.
 
 ### Tasks
 
@@ -53,3 +65,13 @@ Give them a few minutes for each task, walking around and helping.
 Then do it on the screen and explain.
 
 ### Review and questions & comments
+
+#### Summary
+
+You have now experienced what interactive, REPL-driven development is about:
+
+* Develop an application while it is running, interact with it from code, without any restarts and waiting for compilation 
+* Write tiny pieces of code and try them out at once, build up a little more, try it again, ...
+* Get an immediate feedback on what your code does and on what data is there
+
+You have learned to proceed in these tiny, verified steps and to capture local arguments as globals (using `def`) so that you can play with a piece of code on its own.

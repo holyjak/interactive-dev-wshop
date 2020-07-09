@@ -1,5 +1,11 @@
-A minimal Clojure subset cheat sheet
-====================================
+Workshop Cheat Sheet
+====================
+
+# Clojure - A minimal Clojure subset
+
+## Tips
+
+**Always start with typing a `(` when writing code (unless you you just want to refer to a named piece of data)** (thus preventing confusing both yourself and Calva :-)).
 
 ## General
 
@@ -20,17 +26,21 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 
 ## Definitions and functions
 
-[`def`](https://clojuredocs.org/clojure.core/def) - `(def <name> <value>)` - create a global "constant" (a "var" in Clojure speak)
+[`def`](https://clojuredocs.org/clojure.core/def) - `(def <name> <value>)` - give a name to a piece of data or a function (i.e. "define" a "var" in Clojure speak); ex.: `(def pi 3.14)`
 
 [`fn`](https://clojuredocs.org/clojure.core/fn) - `(fn [arg1 arg2 ...] <body>)` - define a function (To call a function: `(my-fn arg1 arg2 ...)`)
 
 [`defn`](https://clojuredocs.org/clojure.core/defn) - ± same as `(def my-name (fn [...] ...))`
 
+Catch: We _define_ the arguments of a function inside a vector but when we call it, we include them directly: `(defn plus [x y] (+ x y))` -> `(plus 1 2)`
+
 ## Collections and sequences
 
-[`map`](https://clojuredocs.org/clojure.core/map) - `(map <function> <sequence>)` - change each element
+[`map`](https://clojuredocs.org/clojure.core/map) - `(map <function> <sequence>)` - change each element; ex.: `(map (fn [n] (+ 1)) [1 2])`
 
-[`filter`](https://clojuredocs.org/clojure.core/filter) - `(filter <sequence>)` - keep only elements the function returns anything but nil/false for
+[`filter`](https://clojuredocs.org/clojure.core/filter) - `(filter <function> <sequence>)` - keep only elements the function returns anything but nil/false for
+
+TIP: When you use `map`/`filter`, write type arguments first before working out the function, i.e. begin with `(map (fn [x] x) my-data)`
 
 [`first`](https://clojuredocs.org/clojure.core/first) - `(first <sequence>)` - return the first element of the sequence
 
@@ -65,3 +75,24 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 [`println`](https://clojuredocs.org/clojure.core/println) - print the thing(s)
 
 [`pr-str`](https://clojuredocs.org/clojure.core/pr-str)  - print Clojure data into a string so that Clojure can read them back
+
+# Calva 
+
+## Calva shortcuts
+
+ You will need these shortcuts during the workshop:
+
+1. `Ctrl-Alt-C SPACE` - evaluate the current _top-level_ expresion in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere on the line; if you experience trubles but it to the very end)
+2. `Ctrl-Alt-C E` (OSX; `Ctrl-Alt-C V` on Windows) - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
+3. `Ctrl-right arrow` - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-left arrow` does the opposite but we will likely not need it)
+4. `Ctrl-W` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
+1. `Ctrl-Alt-C Enter` - load the whole file in the REPL (we will do this once)
+6. (Bonus: OSX - `Cmd-|` jumps between the opening and closing parentheses.)
+
+## Editing tips
+
+**Use Ctrl-W** to (select, cut, and) move code around - this ensures you won't end up with mismatched parentheses.
+
+You can only delete empty parentheses/braces/.. so Ctrl-W to select and cut the content, then backspace to delete the opening and thus also closing parenthese/....
+
+If you screw up, use Ctrl-Z (Cmd-Z on OSX) to back up.

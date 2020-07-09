@@ -26,24 +26,28 @@
   ;; TIP: Open and browse through Cheatsheet.md now to get familiar with it.
   
   ;; ## Try these: ##
+  ;; TIP: Think small - do the simplest thing you can. Evaluate in REPL all the time to check results.
+  ;;      (Also: Always start with a `(` :-))
+  ;; !!! BEWARE !!! the tasks build on one another; if confused, look at what you did before
+  ;;
   ;; 1. Define a map called person with :name John and :age 42
   
   ;; 2. Get the age out of the person map (tip: keywords can be used as functions of a map)
   
   ;; 3. Verify that the person's age is 42 (tip: use `=`)
   
-  ;; 3. Make an anonymous function that takes a single argument and returns it as-is
+  ;; 4. Make an anonymous function that takes a single argument and returns it as-is. Call it (wrap with `()`, send an argument).
   
-  ;; 4. Make the function `fortytwo?` that takes a person and tells you whether s/he is 42 (tip: use `def`, `fn`)
+  ;; 5. Make the function `fortytwo?` that takes a person and tells you whether s/he is 42 (tip: use `def`, `fn`). Call it.
   
-  ;; 4. Define a vector of numbers 40 - 45 called nums
+  ;; 6. Define a vector of numbers 40 - 45 called nums
   
-  ;; 5. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
+  ;; 7. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
   
-  ;; 6. Increase each element by of nums 3 and get the first one (use `map`, `+`, and `first`)
+  ;; 8. Increase each element by of nums 3 and get the first one (use `map`, `+`, and `first`)
   ;;    Tip: Do this in 3 steps, trying each step before coding further: 
   ;;    1. map over nums; 2. extract the first element; 3. refactor the code leveraging `->>`
-  )
+  nil) ; end of (comment...)
 
 ;;-------------------------------------------------------- DATABASE (DO NOT TOUCH!)
 ;; Database-related stuff. You will use these functions.
@@ -77,6 +81,9 @@
   ;;      Use the REPL to find out what does `(fetch-all-people)` return, `map` it into what the UI expects.
   ;;      Tip: Use a `(comment ...)` block to play with the data until it does what you want.
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
+  ;;      
+  ;; !!! BEWARE !!! the tasks build on one another and the warm-up exercises; 
+  ;;                if confused, look at what you did before (and the Cheatsheet)
   {:status 200
    :headers {"Content-Type" "text/plain"}
    :body (pr-str [])})

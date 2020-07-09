@@ -8,14 +8,7 @@ Instal Docker, [VS Code](https://code.visualstudio.com/) and its Clojure [extens
 
 Beware: This directory must me at a place where both VS Code and Docker can see it.
 
-Next, read briefly through this file and learn these few Calva shortcuts:
-
-1. `Ctrl-Alt-C Enter` - load the whole file in the REPL (we will do this once)
-2. `Ctrl-Alt-C SPACE` - evaluate the current top-level expresion in the REPL (your cursor can be ± anywhere on the line; if you experience trubles but it to the very end)
-3. `Ctrl-right arrow` - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-left arrow` does the opposite but we will likely not need it)
-4. `Ctrl-Alt-C E` (OSX; `Ctrl-Alt-C V` on Windows) - evaluate the thing the cursor is on/right after - similar to nr. 2 but useful if you want to evaluate a smaller thing inside a bigger expression
-5. `Ctrl-W` - expand selection - useful to select the thing you will move/change (often in combination with Cut and Paste)
-6. (Bonus: OSX - `Cmd-|` jumps between the opening and closing parentheses.)
+Next, read briefly through this file.
 
 #### FAQ
 
@@ -47,10 +40,10 @@ The tasks are described in more detail in the code. Only briefly:
 
 ### Running the REPL
 
-Start the server: menu - Terminal - New Terminal, in it execute `./docker/run-docker.sh` (or the one-liner from that file)
+Start the server: menu - Terminal - New Terminal, in it execute `./docker/run-docker.sh` (for Windows see below))
 (Note: Some output and errors will be printed out in this terminal.)
 
-On a Windows terminal, paste the _content_ of the file. And you will likely need to replace `$PWD` in it with the actual absolute path to the workshop directory (something like `C:\\Users\xyz\Documents\interactive-dev-wshop`).
+On Windows, paste the _content_ of the file into a cmd.exe terminal (not PowerShell, it complains about something). You will likely need to replace `$PWD` in the command with the actual absolute path to the workshop directory (something like `C:\\Users\xyz\Documents\interactive-dev-wshop`).
 
 ### Connecting to the server REPL
 
