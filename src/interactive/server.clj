@@ -66,7 +66,9 @@
 ;; The functions that deliver the data the UI is asking for.
 ;; You will evolve them to fullfil the tasks and satisfy the UI.
 
-(defn handle-people [req]
+(defn handle-people 
+  "Return the list of people"
+  [req]
   ;; TODO Task 1 (guided): Return fake, hard-coded data for people => 
   ;;      Capture req to see what is required, create a vector with a corresponding map(s).
   ;;      Lesson: Capturing args for REPL interaction/focused invocation, change without restart/ui reloads. 
@@ -75,24 +77,29 @@
   ;;      Use the REPL to find out what does `(fetch-all-people)` return, `map` it into what the UI expects.
   ;;      Tip: Use a `(comment ...)` block to play with the data until it does what you want.
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
-  ;(def req' req)
   {:status 200
    :headers {"Content-Type" "text/plain"}
    :body (pr-str [{:fname "John" :email "snow@example.com"}
                   {:fname "John 2" :email "2@example.com"}])})
 
-(defn handle-person [req email]
-  ;; TODO Task 3: Find the requested person in the DB =>
-  ;;      Use `->>`, `fetch-all-people `and `filter` and `first` and transform it into the form the UI wants.
+(defn handle-person 
+  "Return the data needed when an 'Edit' button is pressed."
+  [req email]
+  ;; TODO Task 3: Find the person with the given `email` in the DB and return the requested data =>
+  ;;      Use `->>`, `fetch-all-people`, `filter`, `map`, and `first`. Remember to check what data the UI wants.
+  ;;      Tip: Develop inside a `(comment ...)`, test every tiny step, remember to change the status.
   ;;      Lesson: Capture arguments as a global var, evolve the code via trying snippets in the REPL.
   {:status 500
     :headers {"Content-Type" "text/plain"}
     :body (pr-str "Not implemented")})
 
-(defn handle-person-update [req email]
+(defn handle-person-update 
+  "Update the given person in the DB and return the status 'OK' to the client."
+  [req email]
   ;; TODO Task 4: Update the person in the DB based on the request
   ;;      => Find out what the request contains and use the same approach as above to find the person.
   ;;         then use `update-person-first-name` to update him/her. Tip: Use `let`.
+  ;; <your code here>
   {:status 500 :headers {"Content-Type" "text/plain"} :body (pr-str "Not implemented")})
 
 ;;-------------------------------------------------------- ROUTING, SERVER ETC. (DO NOT TOUCH)

@@ -22,7 +22,7 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 
 [`def`](https://clojuredocs.org/clojure.core/def) - `(def <name> <value>)` - create a global "constant" (a "var" in Clojure speak)
 
-[`fn`](https://clojuredocs.org/clojure.core/fn) - `(fn [arg1 arg2 ...] <body>)` - define a function
+[`fn`](https://clojuredocs.org/clojure.core/fn) - `(fn [arg1 arg2 ...] <body>)` - define a function (To call a function: `(my-fn arg1 arg2 ...)`)
 
 [`defn`](https://clojuredocs.org/clojure.core/defn) - ± same as `(def my-name (fn [...] ...))`
 
