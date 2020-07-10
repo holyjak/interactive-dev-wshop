@@ -16,7 +16,7 @@ From experience, with junior developers:
 
 Why are we doing this? What will you gain? What are we going to do?
 
-> Interactive, REPL-driven development is about developing your application _while_ it is running,
+> There are two styles of development: the common compile/transpile - wait - restart - wait - recreate application state one and the interactive one. This interactive, REPL-driven development is about developing your application _while_ it is running,
 without ever restarting it. It is about trying out each new tiny snippet of code _in the context of the running application_ (i.e. with access to its data, state, and connections) and thus about growing the code in a series of small, tested steps.
 >
 > What is a REPL? An acronym for Read-Eval-Print-Loop and you can think of it as a coding terminal into your running application: you send it commands and new code and get back data.
