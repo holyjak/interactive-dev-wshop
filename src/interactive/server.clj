@@ -31,22 +31,29 @@
   ;; !!! BEWARE !!! the tasks build on one another; if confused, look at what you did before
   ;;
   ;; 1. Define a map called person with :name John and :age 42
+  :your-code-comes-here...
   
-  ;; 2. Get the age out of the person map (tip: keywords can be used as functions of a map)
+  ;; 2. Create a subset of the map with only the name (tip: use `select-keys`)
   
-  ;; 3. Verify that the person's age is 42 (tip: use `=`)
+  ;; 3. Get the age out of the person map (tip: a keyword can be used as function of a map)
   
-  ;; 4. Make an anonymous function that takes a single argument and returns it as-is. Call it (wrap with `()`, send an argument).
+  ;; 4. Verify that the person's age is 42 (tip: use `=`)
   
-  ;; 5. Make the function `fortytwo?` that takes a person and tells you whether s/he is 42 (tip: use `def`, `fn`). Call it.
+  ;; 5.1 Make an anonymous function that takes a single argument and returns it as-is. 
+  ;; 5.2 Call it (wrap with `()`, send an argument).
   
-  ;; 6. Define a vector of numbers 40 - 45 called nums
+  ;; 6.1 Make the function `fortytwo?` that takes a person and tells you whether s/he is 42 
+  ;; (tip: use `def` and `fn`; then rewrite it to use just `defn`). 
+  ;; 6.2 Call it.
   
-  ;; 7. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
+  ;; 7. Define a vector of numbers 40 - 45 called nums
   
-  ;; 8. Increase each element by of nums 3 and get the first one (use `map`, `+`, and `first`)
+  ;; 8. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
+  
+  ;; 9. Increase each element by of nums 3 and get the first one (use `map`, `+`, and `first`)
   ;;    Tip: Do this in 3 steps, trying each step before coding further: 
   ;;    1. map over nums; 2. extract the first element; 3. refactor the code leveraging `->>`
+  
   nil) ; end of (comment...)
 
 ;;-------------------------------------------------------- DATABASE (DO NOT TOUCH!)
@@ -56,15 +63,12 @@
 (def ds (jdbc/get-datasource {:dbtype "h2" :dbname "people"}))
 
 (defn fetch-all-people []
-  (jdbc/execute! ds ["SELECT * from people"] {:builder-fn jdbc-rs/as-unqualified-maps}))
+  (jdbc/execute! ds ["SELECT * from people"] {:builder-fn jdbc-rs/as-unqualified-lower-maps}))
 
 (defn update-person-first-name [id first-name]
   (assert id "id is required")
   (assert first-name "first-name is required")
   (jdbc/execute! ds ["UPDATE people SET fname=? WHERE id=?" first-name id]))
-
-(comment
-  (fetch-all-people))
 
 ;;-------------------------------------------------------- REQUEST HANDLING (fill in the code!)
 ;; The functions that deliver the data the UI is asking for.
@@ -79,8 +83,9 @@
   ;;
   ;; TODO Task 2: Replace the hardcoded data with data from the DB =>
   ;;      Use the REPL to find out what does `(fetch-all-people)` return, `map` it into what the UI expects.
-  ;;      Tip: Use a `(comment ...)` block above the defn to play with the data until it does what you want.
+  ;;      Tip: Use the `(comment ...)` block below this defn to play with the data until it does what you want.
   ;;           Use a `def` to store the DB result so that you don't need to fetch it repeatedly.
+  ;;           Leverage `select-keys` and data from the request.
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
   ;;      
   ;; !!! BEWARE !!! the tasks build on one another and the warm-up exercises; 
@@ -88,6 +93,10 @@
   {:status 200
    :headers {"Content-Type" "text/plain"}
    :body (pr-str [])})
+
+(comment
+  ;; <your experimentations come here>
+  nil)
 
 (defn handle-person 
   "Return the data needed when an 'Edit' button is pressed."

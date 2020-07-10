@@ -16,7 +16,7 @@ The last expression inside a function is its return value.
 
 ## Data & data literals
 
-`{:my-key "value", :another 123}` - a map (~ JS object)
+`{:my-key "value", :another 123}` - a (hash)map (~ JS object)
 
 To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 
@@ -43,6 +43,8 @@ Catch: We _define_ the arguments of a function inside a vector but when we call 
 TIP: When you use `map`/`filter`, write type arguments first before working out the function, i.e. begin with `(map (fn [x] x) my-data)`
 
 [`first`](https://clojuredocs.org/clojure.core/first) - `(first <sequence>)` - return the first element of the sequence
+
+[`select-keys`](https://clojuredocs.org/clojure.core/select-keys) - make a subset of a map; ex.: `(select-keys {:a 1,:b 2,:c 3} [:a :b])` produces `{:a 1, :b 2}`
 
 ## Logic and comparison
 

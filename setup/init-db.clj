@@ -15,5 +15,4 @@ create table people (
 insert into people(fname,lname,email) values
   ('Rich', 'Hickey','rich@example.com'),
   ('Carin', 'Meier','gigasquid@example.com'),
-  ('Stu', 'Halloway','stu@example.com'),
   ('Zach', 'Tellman','zach@example.com')"])
