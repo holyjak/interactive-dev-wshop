@@ -23,7 +23,7 @@ without ever restarting it. It is about trying out each new tiny snippet of code
 
 ### Brief Clojure syntax intro
 
-1. Talk through the [Clojure syntax intro slides](doc/Clojure%20syntax%20intro%20slides.pdf).
+1. Talk through the [Clojure syntax intro slides](doc/Clojure%20syntax%20intro%20slides.pdf) here [or online](https://docs.google.com/presentation/d/1_toJRBJeBrOO6sDtjxSNoq8A3EVE3VxdqXXcOKp1-kM/edit?usp=sharing) (also have a look at the one with the speaker notes).
 2. Browse through the [Cheatsheet](Cheatsheet.md), focus on the map literal and getting data out
 
 ### Get up and running!
