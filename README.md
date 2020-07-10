@@ -1,24 +1,22 @@
-# interactive-dev-wshop
+# The "Experience interactive development" workshop
 
 Join us to experience what interactive development (also known as REPL-driven development) is about! Feel the joy of immediate feedback, growing your program in tiny increments, of restart-less development!
 
-Suitable for anyone who has some experience with programming. Having some experience with JavaScript is pretty useful (since some key things there are similar to Clojure, which we will use).
+Suitable for anyone who has some experience with programming. Having experience with JavaScript is pretty useful (since a few key things there are similar to Clojure, which we will use).
 
-I want to thank Jingyi Li, Maria Vu, and Mathias Årstad Olsen, whose help has made this workshop a lot better.
+I want to thank Jingyi Li, Maria Vu, and Mathias Årstad Olsen, whose help has made this workshop a whole lot better.
 
 ## Instructions
 
+For instructors: Read the [Instructor guide](Instructor%20guide.md).
+
 ### Preparation prior to the workshop
 
-Instal Docker, [VS Code](https://code.visualstudio.com/) and its Clojure [extension Calva](https://code.visualstudio.com/), get a local copy of https://github.com/holyjak/interactive-dev-wshop. Execute `docker run -it holyjak/interactive-dev-wshop /bin/echo` (in any directory) to download the workshop Docker container.
+Instal Docker, [VS Code](https://code.visualstudio.com/) and its Clojure [extension Calva](https://code.visualstudio.com/), get a local copy of https://github.com/holyjak/interactive-dev-wshop (`git clone` or [a zip file](https://github.com/holyjak/interactive-dev-wshop/archive/master.zip)). Execute `docker run -it holyjak/interactive-dev-wshop /bin/echo` (in any directory) to download the workshop Docker container.
 
-Beware: This directory must me at a place where both VS Code and Docker can see it.
+Beware: This directory must be at a place where both VS Code and Docker can see it.
 
 Next, read briefly through this file.
-
-#### FAQ
-
-* What is a REPL?
 
 ### Intro
 
@@ -26,11 +24,13 @@ You are going to experience what "interactive development" is about. We will use
 
 Your task is to implement the backend server for a people management service. When the frontend wants data, it POSTs to an endpoint with a list of the fields it wants. You need to deliver the data, from the built-in database - see the description of the tasks below.
 
-You will need to learn a few Calva commands and shortcuts - see (and follow) _Running the server and working with Calva_ below. You will need to get a brief [introduction into Clojure syntax (3 slides)](doc/Clojure%20syntax%20intro%20slides.pdf) and you can refer to `Cheatsheet.md` for a reference.
+The instructor will give you a brief [introduction into Clojure syntax (3 slides)](doc/Clojure%20syntax%20intro%20slides.pdf), will review with you the [Cheatsheet](Cheatsheet.md) for code and key VS Code/Calva shortcuts, and will walk you through the code and provide support and help.
 
-### Interactive dev techniques to master:
+(Tip: When you open the Cheatsheet, run the command "_Markdown: Open Preview_" or [open it in a browser](https://github.com/holyjak/interactive-dev-wshop/blob/master/Cheatsheet.md); it is more readable that way. Have it available, perhaps on a half of the screen, you will need it a lot.)
 
-1. Capture arguments as globals (so that you can run sub-expressions from the REPL; mis-uses `def`.)
+### Interactive development techniques you will learn:
+
+1. Capture arguments and expensive results as globals (so that you can run sub-expressions from the REPL; mis-uses `def`.)
 2. Experiment with small parts of the code (sub-expressions) in the REPL
 
 ### Tasks
@@ -42,36 +42,32 @@ The tasks are described in more detail in the code. Only briefly:
 3. Find the requested person in the DB, return.
 4. Update the person in the DB based on the request.
 
-## Running the server and working with Calva
+## At the workshop
 
-### Running the REPL
+### Running the server
 
-Start the server: menu - Terminal - New Terminal, in it execute `./docker/run-docker.sh` (for Windows see below))
-(Note: Some output and errors will be printed out in this terminal.)
+Before you can start coding, you need to start the REPL for evaluating the code and for running the server.
 
-On Windows, paste the _content_ of the file into a cmd.exe terminal (not PowerShell, it complains about something). You will likely need to replace `$PWD` in the command with the actual absolute path to the workshop directory (something like `C:\\Users\xyz\Documents\interactive-dev-wshop`).
+#### Running the REPL
 
-### Connecting to the server REPL
+Start the server: _menu - Terminal - New Terminal_, in it execute `./docker/run-docker.sh` (for Windows see below). (Note: Some output and errors will be printed out in this terminal.)
 
-Open `server.clj` (menu - Go - Go to file).
+On Windows, paste the _content_ of the file into a cmd.exe terminal (not PowerShell; it complains about something). You will likely need to replace `$PWD` in the command with the actual absolute path to the workshop directory (something like `C:\\Users\xyz\Documents\interactive-dev-wshop`).
 
-Menu - View - Command Palette - type "Calva Conn" and select "Connect [..] in Project" then choose "Clojure CLI" then connec to `localhost:52162`.
+Note: The server uses the localhost ports 8088 and 52162 so they need to be free.
 
-Follow the instructions in the newly opened "CLJ REPL" tab to load the current file into the REPL, i.e. switch back to `server.clj` and type `Ctrl+Alt+C Enter`.
-(This should switch the bottom view from "Terminal" to "Output" and you should see some info there.)
+#### Connecting VS Code to the server REPL
 
-Now, inside `server.clj`, put your cursor on the line `(-main)` nearly at the very end if the file and evaluate it in the REPL via `Ctrl+Alt+C SPACE`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the Output.
+The REPL is running but we also need to connect VS Code/Calva to it.
+
+_Menu - View - Command Palette_ - type "_Calva Conn_" and select "_Connect [..] in Project_" then choose "_Clojure CLI_" then connect to `localhost:52162`.
+
+Load the server code into the REPL - open `server.clj` (_menu - Go - Go to file_) and type `Ctrl+Alt+C Enter`.
+(This should switch the bottom view from "Terminal" to "Output" after a while and you should see some info there.)
+
+Now, inside `server.clj`, put your cursor on the line `(-main)` nearly at the very end of the file and evaluate it in the REPL via `Ctrl+Alt+C SPACE`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the Output.
 
 Navigate to the frontend at [localhost:8088](http://localhost:8088/). You should see the Interactive development workshop webapp.
-
-### Working with Calva
-
-https://calva.io/commands-top10/
-
-* Expand selection: ctrl+w
-* Evaluate Current Form Inline command, ctrl+alt+c e (ctrl+alt+c v on Windows)
-* Evaluate Current Top Level Form (defun) command (ctrl+alt+c space)
-* Load current file: alt+ctrl+c enter
 
 ## Bonus resources
 

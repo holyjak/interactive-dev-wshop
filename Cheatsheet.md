@@ -78,9 +78,9 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 
 [`pr-str`](https://clojuredocs.org/clojure.core/pr-str)  - print Clojure data into a string so that Clojure can read them back
 
-# Calva 
+# VS Code and Calva 
 
-## Calva shortcuts
+## VS Code and Calva shortcuts
 
  You will need these shortcuts during the workshop:
 
@@ -90,6 +90,8 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 4. `Ctrl-W` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
 1. `Ctrl-Alt-C Enter` - load the whole file in the REPL (we will do this once)
 6. (Bonus: OSX - `Cmd-|` jumps between the opening and closing parentheses.)
+
+(If you love shortcuts, check out https://calva.io/commands-top10/ :-).)
 
 ## Editing tips
 
