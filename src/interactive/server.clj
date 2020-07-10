@@ -79,7 +79,8 @@
   ;;
   ;; TODO Task 2: Replace the hardcoded data with data from the DB =>
   ;;      Use the REPL to find out what does `(fetch-all-people)` return, `map` it into what the UI expects.
-  ;;      Tip: Use a `(comment ...)` block to play with the data until it does what you want.
+  ;;      Tip: Use a `(comment ...)` block above the defn to play with the data until it does what you want.
+  ;;           Use a `def` to store the DB result so that you don't need to fetch it repeatedly.
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
   ;;      
   ;; !!! BEWARE !!! the tasks build on one another and the warm-up exercises; 

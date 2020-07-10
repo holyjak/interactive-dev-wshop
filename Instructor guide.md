@@ -55,8 +55,14 @@ Let the people go through the tasks in the top comment block, walking around, ch
 
 Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... .
 
-TIP: Forget to eval the fn after you add a def => explain we need 1. eval fn, 2. then repeat the UI action, 3. our req' is ready
-TIP 2: Also forget to eval the fn after you implement it :-)
+Explain: We use `def` to capture local arguments (ex.: function inputs) and data that is expensive
+to retrieve (ex.: DB data) so that we can play with small pieces of code. Mention that def creates a shared, mutable "variable" and thus we never, ever do this in prod code.
+
+TIPS: 
+
+1. Forget to eval the fn after you add a def => explain we need 1. eval fn, 2. then repeat the UI action, 3. our new `xreq` is ready
+2. Also forget to eval the fn after you implement it :-)
+3. Forget to reload the page (to invoke the handler) => why is it "unbound"
 
 #### Individual work on tasks 2-4
 

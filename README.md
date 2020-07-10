@@ -1,5 +1,11 @@
 # interactive-dev-wshop
 
+Join us to experience what interactive development (also known as REPL-driven development) is about! Feel the joy of immediate feedback, growing your program in tiny increments, of restart-less development!
+
+Suitable for anyone who has some experience with programming. Having some experience with JavaScript is pretty useful (since some key things there are similar to Clojure, which we will use).
+
+I want to thank Jingyi Li, Maria Vu, and Mathias Årstad Olsen, whose help has made this workshop a lot better.
+
 ## Instructions
 
 ### Preparation prior to the workshop
