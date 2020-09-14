@@ -12,9 +12,15 @@ For instructors: Read the [Instructor guide](Instructor%20guide.md).
 
 ### Preparation prior to the workshop
 
-Instal Docker, [VS Code](https://code.visualstudio.com/) and its Clojure [extension Calva](https://code.visualstudio.com/), get a local copy of https://github.com/holyjak/interactive-dev-wshop (`git clone` or [a zip file](https://github.com/holyjak/interactive-dev-wshop/archive/master.zip)). Execute `docker run -it holyjak/interactive-dev-wshop /bin/echo` (in any directory) to download the workshop Docker container.
+Instal Docker (see the [requirements](https://code.visualstudio.com/docs/remote/containers#_system-requirements)), [VS Code](https://code.visualstudio.com/), and its [extension Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
 
-Beware: This directory must be at a place where both VS Code and Docker can see it.
+Get a local copy of https://github.com/holyjak/interactive-dev-wshop (`git clone` or [download a zip file](https://github.com/holyjak/interactive-dev-wshop/archive/master.zip))<sup>1</sup>. 
+
+In VS Code, in the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette), search for *Remote-Containers: Open Folder in Container...* and navigate to the downloaded `interactive-dev-wshop` folder. This will open the project in a Docker container with all the dependencies pre-installed. It might take a few minutes. When finished, try *Calva: Start a project REPL and connect (aka Jack-in)* (and select *Clojure CLI* and no aliases, when asked). A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`. After that you are all set up and can close VS Code for now. Repeat the same process just before the workshop (it should then go faster).
+
+You can watch a silent [screencast of me going through the preparations](https://youtu.be/ydtsUgE2RAg), which might help you if you run into any troubles. (The screencast goes a little further, to evaluating the code and starting the backend server.)
+
+<sup>1</sup>) Beware: This directory must be at a place where both VS Code and Docker can see it. That might be an issue under Windows and WSL based on your setup.
 
 Next, read briefly through this file.
 
@@ -48,19 +54,9 @@ The tasks are described in more detail in the code. Only briefly:
 
 Before you can start coding, you need to start the REPL for evaluating the code and for running the server.
 
-#### Running the REPL
+#### Connecting VS Code to the server REPL and starting the server
 
-Start the server: _menu - Terminal - New Terminal_, in it execute `./docker/run-docker.sh` (for Windows see below). (Note: Some output and errors will be printed out in this terminal.)
-
-On Windows, paste the _content_ of the file into a cmd.exe terminal (not PowerShell; it complains about something). You will likely need to replace `$PWD` in the command with the actual absolute path to the workshop directory (something like `C:\\Users\xyz\Documents\interactive-dev-wshop`).
-
-Note: The server uses the localhost ports 8088 and 52162 so they need to be free.
-
-#### Connecting VS Code to the server REPL
-
-The REPL is running but we also need to connect VS Code/Calva to it.
-
-_Menu - View - Command Palette_ - type "_Calva Conn_" and select "_Connect [..] in Project_" then choose "_Clojure CLI_" then connect to `localhost:52162`.
+Make sure that you have opened the project in a [Remote Container](https://code.visualstudio.com/docs/remote/containers) as described above under *Preparation prior to the workshop*, and follow those instructions also to also start and connect to a REPL (a.k.a. "jack-in").
 
 Load the server code into the REPL - open `server.clj` (_menu - Go - Go to file_) and type `Ctrl+Alt+C Enter`.
 (This should switch the bottom view from "Terminal" to "Output" after a while and you should see some info there.)

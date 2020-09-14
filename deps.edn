@@ -16,4 +16,9 @@
                            binaryage/devtools   {:mvn/version "1.0.0"}}}
   :server {:main-opts ["-m" "interactive.server"]}
   :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "0.8.0-alpha5"}}
-          :main-opts ["-m" "nrepl.cmdline" "--port" "52162"]}}}
+          :main-opts ["-m" "nrepl.cmdline" "--port" "52162"]}
+  ;; Deps added by Calva when running jack-in, as of 9/2020
+  :calva {:extra-deps
+          {nrepl/nrepl {:mvn/version "0.6.0"}
+           cider/cider-nrepl {:mvn/version "0.23.0"}
+           clj-kondo/clj-kondo {:mvn/version "2020.04.05"}}}}}

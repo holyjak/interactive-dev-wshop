@@ -17,3 +17,5 @@ semantic.json
 package-lock.json
 people.trace.db
 docker/deps.edn
+node_modules
+.calva
