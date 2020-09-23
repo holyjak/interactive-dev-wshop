@@ -37,6 +37,8 @@ Everybody & me: Start the server, browse to [localhost:8088](http://localhost:80
 
 (Self: Ready to develop handle-people?)
 
+NOTE: Breaks?
+
 ### Code walk-through
 
 Everybody opens `src/interactive/server.clj`, walk through the code briefly, focusing on the big picture and the constructs they are going to need.
@@ -45,7 +47,7 @@ Everybody opens `src/interactive/server.clj`, walk through the code briefly, foc
 
 Everybody should open the Cheatsheet (preview, not .md) next to the editor or have a printout.
 They should read through it so that they know what is where and can find it.
-They should review the _Calva shortcuts_ from the README and, ideally, have them readily available.
+They should review the _Calva shortcuts_ from the cheatsheet and, ideally, have them readily available.
 
 Let the people go through the tasks in the top comment block, walking around, checking on them, helping.
 
@@ -53,10 +55,10 @@ Let the people go through the tasks in the top comment block, walking around, ch
 
 #### Guided task 1
 
-Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... .
+Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... . At the end use the comment block to invoke the handler with the captured xreq and verify the output.
 
 Explain: We use `def` to capture local arguments (ex.: function inputs) and data that is expensive
-to retrieve (ex.: DB data) so that we can play with small pieces of code. Mention that def creates a shared, mutable "variable" and thus we never, ever do this in prod code.
+to retrieve (ex.: DB data) so that we can play with small pieces of code out of context. Mention that def creates a shared, mutable "variable" and thus we never, ever do this in prod code.
 
 TIPS: 
 

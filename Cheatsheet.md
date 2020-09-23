@@ -50,6 +50,8 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 
 [`=`](https://clojuredocs.org/clojure.core/%3D) - `(= arg1 arg2 ...)` - are all the arguments equal?
 
+[`not=`](https://clojuredocs.org/clojure.core/%3D) - the opposite of `=`
+
 [`if`](https://clojuredocs.org/clojure.core/if) - `(if condition true-expression false-expression)` (`false-expression` defaults to `nil`)
 
 ## Flow control
@@ -64,10 +66,10 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 ```
 
 
-[`let`](https://clojuredocs.org/clojure.core/let) - `(let [var1 value1, ...] body)` - introduce local constants (bindings). Example below:
+[`let`](https://clojuredocs.org/clojure.core/let) - `(let [name1 value1, ...] body)` - introduce local constants (bindings) available inside its body. (Note: the `[]` here is not really creating a vector of data, it just tells to let "here come the bindings..." similarly as in a `defn` it tells "here comes the declaration of arguments".) Example below:
 
 ```clojure
-(let [five 5
+(let [five 5,
       ten (* 2 five)]
   (= 15 (+ five ten)))
 ```
@@ -87,6 +89,7 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 1. `Ctrl-Alt-C SPACE` - evaluate the current _top-level_ expresion in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere on the line; if you experience trubles but it to the very end)
 2. `Ctrl-Alt-C E` (OSX; `Ctrl-Alt-C V` on Windows) - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
 3. `Ctrl-right arrow` - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-left arrow` does the opposite but we will likely not need it)
+   BEWARE: On OSX it migth conflict with a sytem shortcut. Fix or use `Ctrl-W`, cut, paste.
 4. `Ctrl-W` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
 1. `Ctrl-Alt-C Enter` - load the whole file in the REPL (we will do this once)
 6. (Bonus: OSX - `Cmd-|` jumps between the opening and closing parentheses.)

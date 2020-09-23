@@ -46,13 +46,14 @@
   ;; (tip: use `def` and `fn`; then rewrite it to use just `defn`). 
   ;; 6.2 Call it.
   
-  ;; 7. Define a vector of numbers 40 - 45 called nums
+  ;; 7. Define a vector of numbers 40 - 45 called nums (just type them out :-))
   
   ;; 8. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
   
-  ;; 9. Increase each element by of nums 3 and get the first one (use `map`, `+`, and `first`)
+  ;; 9. Increase each element of nums by 3 and then get the first one (use `map`, `+`, and `first`)
   ;;    Tip: Do this in 3 steps, trying each step before coding further: 
-  ;;    1. map over nums; 2. extract the first element; 3. refactor the code leveraging `->>`
+  ;;    1. map over nums; 2. extract the first element;
+  ;;    9.3. Now refactor the code leveraging `->>`
   
   nil) ; end of (comment...)
 
@@ -79,14 +80,19 @@
   [req]
   ;; TODO Task 1 (guided): Return fake, hard-coded data for people => 
   ;;      Capture req to see what is required, create a vector with a corresponding map(s).
-  ;;      Lesson: Capturing args for REPL interaction/focused invocation, change without restart/ui reloads. 
+  ;;      Lesson: Capturing args for REPL interaction/focused invocation, 
+  ;;              change without restart/ui reloads. 
   ;;
   ;; TODO Task 2: Replace the hardcoded data with data from the DB =>
-  ;;      Use the REPL to find out what does `(fetch-all-people)` return, `map` it into what the UI expects.
-  ;;      Tip: Use the `(comment ...)` block below this defn to play with the data until it does what you want.
+  ;;      Use the REPL to find out what does `(fetch-all-people)` return, then
+  ;;      `map` it into what the UI expects.
+  ;;      Tip: Use the `(comment ...)` block below this defn to play with the data 
+  ;;           until it does what you want.
   ;;           Use a `def` to store the DB result so that you don't need to fetch it repeatedly.
   ;;           Leverage `select-keys` and data from the request.
   ;;      Lesson: Experimenting with small bits of code in the REPL as we evolve the program.
+  ;;
+  ;; (TODO Optional task 2b: Instead of hardcoding what keys to keep, use the list of keys in `req`.)
   ;;      
   ;; !!! BEWARE !!! the tasks build on one another and the warm-up exercises; 
   ;;                if confused, look at what you did before (and the Cheatsheet)
@@ -102,7 +108,8 @@
   "Return the data needed when an 'Edit' button is pressed."
   [req email]
   ;; TODO Task 3: Find the person with the given `email` in the DB and return the requested data =>
-  ;;      Use `->>`, `fetch-all-people`, `filter`, `map`, and `first`. Remember to check what data the UI wants.
+  ;;      Use `->>`, `fetch-all-people`, `filter`, `map`, and `first`. 
+  ;;      Remember to check what data the UI wants!
   ;;      Tip: Develop inside a `(comment ...)`, test every tiny step, remember to change the status.
   ;;      Lesson: Capture arguments as a global var, evolve the code via trying snippets in the REPL.
   {:status 500
