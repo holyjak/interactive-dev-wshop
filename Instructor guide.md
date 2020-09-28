@@ -43,6 +43,8 @@ NOTE: Breaks?
 
 Everybody opens `src/interactive/server.clj`, walk through the code briefly, focusing on the big picture and the constructs they are going to need.
 
+Perhaps skip the handlers and server part beyond showing how and when the functions they are to work with are invoked.
+
 ### Coding warm-up
 
 Everybody should open the Cheatsheet (preview, not .md) next to the editor or have a printout.
@@ -60,6 +62,8 @@ Complete the task 1 on the screen, explaining - use `def` to capture the request
 Explain: We use `def` to capture local arguments (ex.: function inputs) and data that is expensive
 to retrieve (ex.: DB data) so that we can play with small pieces of code out of context. Mention that def creates a shared, mutable "variable" and thus we never, ever do this in prod code.
 
+Then let everyone to finish the task for herself.
+
 TIPS: 
 
 1. Forget to eval the fn after you add a def => explain we need 1. eval fn, 2. then repeat the UI action, 3. our new `xreq` is ready
@@ -67,6 +71,8 @@ TIPS:
 3. Forget to reload the page (to invoke the handler) => why is it "unbound"
 
 #### Individual work on tasks 2-4
+
+TIPS for the people: Read the function docstring and task description carefully. Proceed in minimal steps, trying each out in the REPL.
 
 Give them a few minutes for each task, walking around and helping.
 

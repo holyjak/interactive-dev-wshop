@@ -60,10 +60,10 @@ Before you can start coding, you need to start the REPL for evaluating the code 
 
 Make sure that you have opened the project in a [Remote Container](https://code.visualstudio.com/docs/remote/containers) as described above under *Preparation prior to the workshop*, and follow those instructions also to also start and connect to a REPL (a.k.a. "jack-in").
 
-Load the server code into the REPL - open `server.clj` (_menu - Go - Go to file_) and type `Ctrl+Alt+C Enter` (or run Calva - Load File ...).
+Load the server code into the REPL - open `server.clj` (_menu - Go - Go to file_) and run Calva - Load Current File and Dependencies.
 (This should switch the bottom view from "Terminal" to "Output" after a while and you should see some info there.)
 
-Now, inside `server.clj`, put your cursor on the line `(-main)` nearly at the very end of the file and evaluate it in the REPL via `Ctrl+Alt+C SPACE`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the Output.
+Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Ctrl+Alt+C SPACE`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the Output.
 
 Navigate to the frontend at [localhost:8088](http://localhost:8088/). You should see the Interactive development workshop webapp.
 

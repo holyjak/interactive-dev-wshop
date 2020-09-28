@@ -91,8 +91,7 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 3. `Ctrl-right arrow` - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-left arrow` does the opposite but we will likely not need it)
    BEWARE: On OSX it migth conflict with a sytem shortcut. Fix or use `Ctrl-W`, cut, paste.
 4. `Ctrl-W` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
-1. `Ctrl-Alt-C Enter` - load the whole file in the REPL (we will do this once)
-6. (Bonus: OSX - `Cmd-|` jumps between the opening and closing parentheses.)
+5. (Bonus: OSX - `Cmd-|` jumps between the opening and closing parentheses.)
 
 (If you love shortcuts, check out https://calva.io/commands-top10/ :-).)
 

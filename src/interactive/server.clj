@@ -76,7 +76,7 @@
 ;; You will evolve them to fullfil the tasks and satisfy the UI.
 
 (defn handle-people 
-  "Return the list of people"
+  "Return the list of people displayed on the main page"
   [req]
   ;; TODO Task 1 (guided): Return fake, hard-coded data for people => 
   ;;      Capture req to see what is required, create a vector with a corresponding map(s).
@@ -117,7 +117,7 @@
     :body (pr-str "Not implemented")})
 
 (defn handle-person-update 
-  "Update the given person in the DB and return the status 'OK' to the client."
+  "Update the given person in the DB and return the status 'OK' to the client when the 'Save' button is pressed."
   [req email]
   ;; TODO Task 4: Update the person in the DB based on the request
   ;;      => Find out what the request contains and use the same approach as above to find the person.

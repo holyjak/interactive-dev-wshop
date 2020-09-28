@@ -62,6 +62,12 @@
 
             (nil? person)
             (d/p {:className "ui active loader"} "Loading...")
+            
+            (some nil? [fname lname email])
+            ($ Message {:error true} "Bad response from the server - missing one of First name, Last name, Email")
+            
+            (> (count (keys person)) 3)
+            ($ Message {:error true} "Bad response from the server - we only want First name, Last name, Email but got more attributes back")
 
             :else
             (d/form
@@ -77,7 +83,7 @@
                     (d/input {:type "text", :value email, :readOnly true}))
              (when true ;(:error? state)
                (d/div {:className "ui error message"}
-                      (d/p "Saving the person failed - see the Console for details")))
+                      (d/p "Saving the person failed - see the Console for details. Perhaps you haven't implemented `handle-person-update` yet?")))
              (d/button {:className (str/join " " ["ui primary submit button" (when (:saving? state) "loading")]) 
                         :type "submit"
                         :on-click (fn [evt]
@@ -98,7 +104,7 @@
    (d/tr 
     (cond
       (< (count person) 2) (error-td "An incomplete person this is!")
-      (> (count person) 2) (error-td "Too many attributes this person has!")
+      (> (count person) 2) (error-td "Too many attributes this person has! I only wanted 2!")
       (not= (set (keys person)) #{:fname :email}) (error-td "A confusion of attributes befell us!")
       :else
       (<>
