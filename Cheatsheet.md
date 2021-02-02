@@ -88,16 +88,16 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 
 1. `Ctrl-Alt-C SPACE` - evaluate the current _top-level_ expresion in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere on the line; if you experience trubles but it to the very end)
 2. `Ctrl-Alt-C E` (OSX; `Ctrl-Alt-C V` on Windows) - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
-3. `Ctrl-right arrow` - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-left arrow` does the opposite but we will likely not need it)
+3. `Ctrl-Alt-right arrow` (OSX, Win; `.` instead of `->` in Linux) - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-alt-left arrow` (`,`) does the opposite but we will likely not need it)
    BEWARE: On OSX it migth conflict with a sytem shortcut. Fix or use `Ctrl-W`, cut, paste.
-4. `Ctrl-W` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
+4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
 5. (Bonus: `Cmd-|` (OSX; `Ctrl-Shift-|` on Windows, cmd "Go to Bracket") jumps between the opening and closing parentheses.)
 
 (If you love shortcuts, check out https://calva.io/commands-top10/ :-).)
 
 ## Editing tips
 
-**Use Ctrl-W** to (select, cut, and) move code around - this ensures you won't end up with mismatched parentheses.
+**Use Ctrl-W / Shift-Alt-right arrow** to (select, cut, and) move code around - this ensures you won't end up with mismatched parentheses.
 
 You can only delete empty parentheses/braces/.. so Ctrl-W to select and cut the content, then backspace to delete the opening and thus also closing parenthese/....
 
