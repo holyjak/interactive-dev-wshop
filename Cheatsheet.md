@@ -86,8 +86,8 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 
  You will need these shortcuts during the workshop:
 
-1. `Ctrl-Alt-C SPACE` - evaluate the current _top-level_ expresion in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere on the line; if you experience trubles but it to the very end)
-2. `Ctrl-Alt-C E` (OSX; `Ctrl-Alt-C V` on Windows) - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
+1. `Alt ENTER` - evaluate the current _top-level_ expresion in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere on the line; if you experience trubles but it to the very end)
+2. `Ctrl ENTER` - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
 3. `Ctrl-Alt-right arrow` (OSX, Win; `.` instead of `->` in Linux) - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-alt-left arrow` (`,`) does the opposite but we will likely not need it)
    BEWARE: On OSX it migth conflict with a sytem shortcut. Fix or use `Ctrl-W`, cut, paste.
 4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
