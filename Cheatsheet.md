@@ -90,7 +90,7 @@ TIP: When you use `map`/`filter`, write type arguments first before working out 
 2. `Ctrl ENTER` - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
 3. `Ctrl-Alt-right arrow` (OSX, Win; `.` instead of `->` in Linux) - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-alt-left arrow` (`,`) does the opposite but we will likely not need it)
    BEWARE: On OSX it migth conflict with a sytem shortcut. Fix or use `Ctrl-W`, cut, paste.
-4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
+4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` (Win, ?Lin) - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
 5. (Bonus: `Cmd-|` (OSX; `Ctrl-Shift-|` on Windows, cmd "Go to Bracket") jumps between the opening and closing parentheses.)
 
 (If you love shortcuts, check out https://calva.io/commands-top10/ :-).)
