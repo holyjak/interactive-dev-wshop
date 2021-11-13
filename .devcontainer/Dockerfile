@@ -1,5 +1,5 @@
-# # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.137.0/containers/java
-ARG VARIANT="14"
+# # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.205.2/containers/java
+ARG VARIANT="17"
 FROM mcr.microsoft.com/vscode/devcontainers/java:${VARIANT}
 
 # # ** [Optional] Uncomment this section to install additional packages. **

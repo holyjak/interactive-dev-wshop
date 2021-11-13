@@ -19,3 +19,4 @@ people.trace.db
 docker/deps.edn
 node_modules
 .calva
+.lsp/.cache/
