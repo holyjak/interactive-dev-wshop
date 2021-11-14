@@ -27,7 +27,7 @@ When finished, run the command (using Command Palette or its hotkey) *Calva: Sta
 
 A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`. After that you are all set up and can close VS Code for now. Repeat the same process just before the workshop (it should go faster then).
 
-You can watch a (! little outdated !) silent [screencast of me going through the preparations](https://youtu.be/ydtsUgE2RAg), which might help you if you run into any troubles. (The screencast goes a little further, to evaluating the code and starting the backend server.)
+You can watch a silent [screencast of me going through the preparations](https://youtu.be/pBKej6KYYCY) (11/2021), which might help you if you run into any troubles. (The screencast goes a little further, to evaluating the code and starting the backend server.)
 
 <sup>1</sup>) Beware: This directory must be at a place where both VS Code and Docker can see it. That might be an issue under Windows and WSL based on your setup.
 
