@@ -18,11 +18,16 @@ _\*) Note: Last tested with Calva 2.0.225_
 
 Get a local copy of https://github.com/holyjak/interactive-dev-wshop (`git clone` or [download a zip file](https://github.com/holyjak/interactive-dev-wshop/archive/master.zip))<sup>1</sup>. 
 
-In VS Code, in the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette), search for *Remote-Containers: Open Folder in Container...* and navigate to the downloaded `interactive-dev-wshop` folder. This will open the project in a Docker container with all the dependencies pre-installed. It might take a few minutes. 
+In VS Code, in the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (_View - Command Palette..._), search for *Remote-Containers: Open Folder in Container...* and navigate to the downloaded `interactive-dev-wshop` folder. This will open the project in a Docker container with all the dependencies pre-installed. It might take a few minutes.
 
-When finished, try *Calva: Start a project REPL and connect (aka Jack-in)* (and select *Clojure CLI* and no aliases, when asked). A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`. After that you are all set up and can close VS Code for now. Repeat the same process just before the workshop (it should go faster then).
+When finished, run the command (using Command Palette or its hotkey) *Calva: Start a Project REPL and Connect (aka Jack-in)* and
 
-You can watch a silent [screencast of me going through the preparations](https://youtu.be/ydtsUgE2RAg), which might help you if you run into any troubles. (The screencast goes a little further, to evaluating the code and starting the backend server.)
+1. In the "Please select a project type" dropdown, select *deps.edn*
+2. In the next dropdown, when asked to "Pick an aliases to launch with" _just press OK_ without any alias
+
+A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`. After that you are all set up and can close VS Code for now. Repeat the same process just before the workshop (it should go faster then).
+
+You can watch a (! little outdated !) silent [screencast of me going through the preparations](https://youtu.be/ydtsUgE2RAg), which might help you if you run into any troubles. (The screencast goes a little further, to evaluating the code and starting the backend server.)
 
 <sup>1</sup>) Beware: This directory must be at a place where both VS Code and Docker can see it. That might be an issue under Windows and WSL based on your setup.
 
