@@ -35,7 +35,7 @@ Next, read briefly through this file.
 
 ### Intro
 
-You are going to experience what "interactive development" is about. One of the languages that support interactive development is Clojure, and that is what we will use. You don't need to know it and the goal is not to teach. I have minimized the amount of Clojure you will need to understand so that we can focus on the interactive development side. (And the code is thus not a good example of a production code.)
+You are going to experience what "interactive development" is about. The only language build around interactive development that I know is Clojure, so we will use it. You don't need to know it and the goal is not to teach it. I have minimized the amount of Clojure you will need to understand so that we can focus on the interactive development side. (And the code is thus not a good example of a production code.)
 
 Your task is to implement the backend server for a people management service. When the frontend wants data, it POSTs to an endpoint with a list of the fields it wants. You need to deliver the data, from the built-in database - see the description of the tasks below.
 
