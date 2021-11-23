@@ -55,6 +55,8 @@ Let the people go through the tasks in the top comment block, walking around, ch
 
 ### Tasks
 
+NOTE: Mention that people can look at the `final-code` branch to see a correct solution, if they struggle.
+
 #### Guided task 1
 
 Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... . At the end use the comment block to invoke the handler with the captured xreq and verify the output.

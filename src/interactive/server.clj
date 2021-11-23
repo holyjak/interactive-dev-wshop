@@ -60,7 +60,7 @@
   ;;    (use `map`, `+`, and `first`)
   ;;    Tip: Do this in 3 steps, trying each step before coding further: 
   ;;    1. map over `nums`; 2. extract the first element;
-  ;;    9.3. Now refactor the code leveraging `->>`
+  ;;    3. now refactor the code leveraging `->>`
 
   nil
   ) ; end of (comment...)
@@ -133,7 +133,7 @@
     :body (pr-str "Not implemented")})
 
 (defn handle-person-update 
-  "Update the given person in the DB and return the status 'OK' to the client 
+  "Update the given person in the DB and return the status 200 to the client
   when the 'Save' button is pressed."
   [req email]
   ;; TODO Task 4: Update the person in the DB based on the request
@@ -143,7 +143,7 @@
   ;; <your code here>
   {:status 500 
    :headers {"Content-Type" "text/plain"} 
-   :body (pr-str "Not implemented")})
+   :body (pr-str "Not implemented")}) ; FYI: The UI ignores the body
 
 ;;------------------------------------------ ROUTING, SERVER ETC. (DO NOT TOUCH)
 ;; Routing of requests to the appropriate handler above,
