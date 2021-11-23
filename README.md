@@ -35,11 +35,11 @@ Next, read briefly through this file.
 
 ### Intro
 
-You are going to experience what "interactive development" is about. The only language build around interactive development that I know is Clojure, so we will use it. You don't need to know it and the goal is not to teach it. I have minimized the amount of Clojure you will need to understand so that we can focus on the interactive development side. (And the code is thus not a good example of a production code.)
+You are going to experience what "interactive development" is about. The only language build around interactive development that I know is Clojure, so we will use that. You don't need to know it and the goal is not to teach it. I have minimized the amount of Clojure you will need to understand so that we can focus on the interactive development side. (And the code is thus not a good example of production code.)
 
 Your task is to implement the backend server for a people management service. When the frontend wants data, it POSTs to an endpoint with a list of the fields it wants. You need to deliver the data, from the built-in database - see the description of the tasks below.
 
-The instructor will give you a brief [introduction into Clojure syntax (3 slides)](doc/Clojure%20syntax%20intro%20slides.pdf), will review with you the [Cheatsheet](Cheatsheet.md) for Clojure and key VS Code/Calva shortcuts, and will walk you through the code and provide support and help.
+The instructor will give you a brief [introduction into Clojure syntax (3 slides)](doc/Clojure%20syntax%20intro%20slides.pdf), will go through the [Cheatsheet](Cheatsheet.md) for Clojure and key VS Code/Calva shortcuts with you, and will walk you through the code and provide support and help.
 
 (Tip: When you open the Cheatsheet, run the command "_Markdown: Open Preview_" or [open it in a browser](https://github.com/holyjak/interactive-dev-wshop/blob/master/Cheatsheet.md); it is more readable that way. Have it available, perhaps on a half of the screen, you will need it a lot.)
 
@@ -61,7 +61,7 @@ The tasks are described in more detail in the code. Only briefly:
 
 ### Recommended Calva layout
 
-For me it works best to structure Calva as shown below, i.e. `server.clj` on the left, Markdown preview of the `Cheatsheet.md`, and a tiny `output.calva-repl` on the bottom. (You can drag and drop the tabs where you want them.)
+For me it works best to structure Calva as shown below, i.e. `server.clj` on the left, Markdown preview of the `Cheatsheet.md` on the right, and a tiny `output.calva-repl` at the bottom. (You can drag and drop the tabs where you want them.)
 
 ![Recommended Calva layout](./doc/recommended-calva-layout.png)
 
@@ -78,7 +78,7 @@ Load the server code into the REPL - open `server.clj` (_menu - Go - Go to File_
 
 Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Alt+ENTER`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the _output.calva-repl_ window. Also, VS Code pops up the following message:
 
-![Code: App is running popup](vs-code-open-in-browser.png)
+![Code: App is running popup](./doc/vs-code-open-in-browser.png)
 
 You can click the [Open in Browser] button to show the frontend app or you can manually navigate to [localhost:8088](http://localhost:8088/). You should see the Interactive development workshop webapp.
 
