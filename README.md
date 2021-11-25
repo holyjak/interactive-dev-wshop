@@ -73,7 +73,7 @@ Before you can start coding, you need to start the REPL for evaluating the code 
 
 Make sure that you have opened the project in a _Remote Container_ as described above under *[Preparation prior to the workshop](#preparation-prior-to-the-workshop)*, and follow those instructions also to also start and connect to a REPL (a.k.a. "jack-in").
 
-Load the server code into the REPL - open `server.clj` (_menu - Go - Go to File_) and run _Calva: Load Current File and Dependencies_.
+Load the server code into the REPL - open `server.clj` (_menu - Go - Go to File_) and run _Calva: Load Current File and Dependencies_ (_menu - View - Command Palette..._).
 (The line _; Evaluating file: server.clj_ should appear in the _output.calva-repl_ window.)
 
 Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Alt+ENTER`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the _output.calva-repl_ window. Also, VS Code pops up the following message:

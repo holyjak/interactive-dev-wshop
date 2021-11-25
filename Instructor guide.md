@@ -6,11 +6,11 @@ Agenda
 
 ### Note on timing
 
-From experience, with junior developers:
+From experience, ~with junior developers~:
 
 * From start to the warm-up exercise: ~ 1/2h
-* Warm-up: ~1h - 1h30
-* Tasks:  ~1.5h (but can stop anytime)
+* Warm-up: ~1h - 1.5h
+* Tasks:  ~1h - 1.5h (but can stop anytime)
 
 ### Brief intro
 
@@ -51,7 +51,8 @@ Everybody should open the Cheatsheet (preview, not .md) next to the editor or ha
 They should read through it so that they know what is where and can find it.
 They should review the _Calva shortcuts_ from the cheatsheet and, ideally, have them readily available.
 
-Let the people go through the tasks in the top comment block, walking around, checking on them, helping.
+Ask them to carefully read the comments, especially the 'ESSENTIAL TIPS' part.
+Then let them work through the exercises in the top comment block, walking around, checking on them, helping.
 
 ### Tasks
 
@@ -68,9 +69,10 @@ Then let everyone to finish the task for herself.
 
 TIPS: 
 
-1. Forget to eval the fn after you add a def => explain we need 1. eval fn, 2. then repeat the UI action, 3. our new `xreq` is ready
-2. Also forget to eval the fn after you implement it :-)
-3. Forget to reload the page (to invoke the handler) => why is it "unbound"
+1. Forget to eval the fn after you add a def and reload => explain we need 1) eval fn, 2) then repeat the UI action, 3) our captured `_req` is ready
+2. Demonstrate the diff. between Alt-Enter (eval top-level) and Ctrl-Enter (eval current), recommend the former - ppl mess it up
+3. Forget to reload the page (to invoke the handler) => why is the `_req` "unbound"?
+4. Also forget to eval the fn after you finish the task so that the browser still shows nothing :-)
 
 #### Individual work on tasks 2-4
 

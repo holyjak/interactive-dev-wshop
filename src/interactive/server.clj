@@ -26,17 +26,28 @@
   ;; with some Clojure as a warm-up.
   ;; TIP: Open and browse through Cheatsheet.md now to get familiar with it.
 
-  ;; ## Try these: ##
-  ;; TIP: Think small - do the simplest thing you can. 
-  ;;      Evaluate in REPL all the time to check results.
-  ;;      Always start by typing a `(` 😀.
-  ;; !!! BEWARE !!! the tasks build on one another; if confused, look at what 
-  ;;                you did before
+  ;; ***************************************************************************
+  ;; *                                                                         *
+  ;; *   !!! ESSENTIAL TIPS !!!                                                *
+  ;; *   ======================                                                *
+  ;; *   1. **Think small** - make the _tiniest_ step you can, eval!           *
+  ;; *   2. **Evaluate in REPL** _all_ the time to check your code             *
+  ;; *   3. Clojure is simple: everything is either data you refer to with     *
+  ;; *      <some name> or a function you call with `(<function name> ...) `   *
+  ;; *   4. => always start by typing a `(` 😀.                                *
+  ;; *                                                                         *
+  ;; * !!! BEWARE !!! the tasks build on one another; if unsure then           *
+  ;; *                look at what you did before                              *
+  ;; *                                                                         *
+  ;; ***************************************************************************
   ;;
-  ;; 1. Define a map called person with :name John and :age 42
+  ;; ## Warmup exercises: ##
+  ;; (Note: ` in comments delimits code and is not part of the code)
+  ;;
+  ;; 1. Create a map with :name John and :age 42 and assign it the name `person`
   :your-code-comes-here...
 
-  ;; 2. Create a subset of the map with only the name (tip: use `select-keys`)
+  ;; 2. Create a subset of the person map with only the name (tip: use `select-keys`)
 
   ;; 3. Get the age out of the person map (tip: a keyword can be used as 
   ;;    function of a map)
@@ -52,18 +63,20 @@
 
   ;; 6.2 Call it.
 
-  ;; 7. Define a vector of numbers 40 - 45 called nums (just type them out 😀)
+  ;; 7. Create a vector containing the numbers 40 - 45 and assign it the name 
+  ;;    `nums` (just type them out 😀)
 
   ;; 8. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
 
   ;; 9. Increase each element of `nums` by 3 and then get the first one 
   ;;    (use `map`, `+`, and `first`)
-  ;;    Tip: Do this in 3 steps, trying each step before coding further: 
-  ;;    1. map over `nums`; 2. extract the first element;
-  ;;    3. now refactor the code leveraging `->>`
+  ;;    Tip: Do this in 4 steps, trying each step before coding further: 
+  ;;    1. Make an anomymous fn that increment its argument, test it - see #5.2
+  ;;    2. Map it over `nums` - similar to #7
+  ;;    3. Extract the first element
+  ;;    4. Now refactor the code, leveraging `->>`
 
-  nil
-  ) ; end of (comment...)
+  ,) ; end of (comment...)
 
 ;;----------------------------------------------------- DATABASE (DO NOT TOUCH!)
 ;; Database-related stuff. You will use these functions.
@@ -86,7 +99,7 @@
 
 (defn handle-people 
   "Return the list of people displayed on the main page"
-  [req]
+  [req] ; <-- this is the HTTP request from the client (as Clojure data)
   ;; TODO Task 1 (guided): Return fake, hard-coded data for people => 
   ;;      Capture req to see what is required, create a vector 
   ;;      with a corresponding map(s).
@@ -97,10 +110,11 @@
   ;;      Use the REPL to find out what does `(fetch-all-people)` return, then
   ;;      `map` it into what the UI expects.
   ;;      Tip: Use the `(comment ...)` block below this defn to
-  ;;           play with the datauntil it does what you want.
+  ;;           play with the data until it does what you want.
   ;;           Use a `def` to store the DB result so that you don't need to 
   ;;           fetch it repeatedly. Leverage `select-keys` and data 
   ;;           from the request.
+  ;;           See exercises #2, #5.1, #6.1, #9
   ;;      Lesson: Experimenting with small bits of code in the REPL as 
   ;;              we evolve the program.
   ;;
@@ -118,19 +132,24 @@
   nil)
 
 (defn handle-person 
-  "Return the data needed when an 'Edit' button is pressed."
+  "Return the person data needed when an 'Edit' button is pressed."
   [req email]
   ;; TODO Task 3: Find the person with the given `email` in the DB and return 
   ;;      the requested data =>
   ;;      Use `->>`, `fetch-all-people`, `filter`, `map`, and `first`. 
   ;;      Remember to check what data the UI wants!
   ;;      Tip: Develop inside a `(comment ...)`, test every tiny step, remember 
-  ;;           to change the status.
+  ;;           to change the status code to 200.
+  ;;           See task #2 and exercises #8, #9
   ;;      Lesson: Capture arguments as a global var, evolve the code via trying
   ;;              snippets in the REPL.
-  {:status 500
+  {:status 500 ; TODO: Fix the status
     :headers {"Content-Type" "text/plain"}
-    :body (pr-str "Not implemented")})
+    :body (pr-str "Not implemented")}) ; TODO: Return the data
+
+(comment
+  ;; <your experimentations come here>
+  nil)
 
 (defn handle-person-update 
   "Update the given person in the DB and return the status 200 to the client
@@ -139,11 +158,19 @@
   ;; TODO Task 4: Update the person in the DB based on the request
   ;;      => Find out what the request contains and use the same approach as 
   ;;         above to find the person. Then use `update-person-first-name `to
-  ;;         update him/her. Tip: Use `let`.
-  ;; <your code here>
-  {:status 500 
+  ;;         update him/her. 
+  ;;     Tip: Use `let` to make a named constant out of the person data.
+  ;;          See task #3 and exercises #3, #9
+
+  ;; TODO: <your code here>
+  
+  {:status 500 ; TODO: Fix the status
    :headers {"Content-Type" "text/plain"} 
    :body (pr-str "Not implemented")}) ; FYI: The UI ignores the body
+
+(comment
+  ;; <your experimentations come here>
+  nil)
 
 ;;------------------------------------------ ROUTING, SERVER ETC. (DO NOT TOUCH)
 ;; Routing of requests to the appropriate handler above,

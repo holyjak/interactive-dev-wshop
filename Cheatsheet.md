@@ -3,10 +3,6 @@ Workshop Cheat Sheet
 
 # Clojure - A minimal Clojure subset
 
-## Tips
-
-**Always start with typing a `(` when writing code (unless you you just want to refer to a named piece of data)** (thus preventing confusing both yourself and Calva :-)).
-
 ## General
 
 `,` is a whitespace - ignored, add for readability where you want
@@ -65,7 +61,7 @@ TIP: When you use `map`/`filter`, type all the arguments first before working ou
 ;; => 16
 ```
 
-[`let`](https://clojuredocs.org/clojure.core/let) - `(let [name1 value1, ...] body)` - introduce local constants (bindings) available inside its body. (Note: the `[]` here is not really creating a vector of data, it just tells to let "here come the bindings..." similarly as in a `defn` it tells "here comes the declaration of arguments".) Example below:
+[`let`](https://clojuredocs.org/clojure.core/let) - `(let [name1 value1, ...] body)` - introduce local constants (bindings) available inside its body, giving names to pieces of data. (Note: the `[]` here is not really creating a vector of data, it just tells to let "here come the bindings..." similarly as in a `defn` it tells "here comes the declaration of arguments".) Example below:
 
 ```clojure
 (let [five 5,
@@ -79,6 +75,15 @@ TIP: When you use `map`/`filter`, type all the arguments first before working ou
 
 [`pr-str`](https://clojuredocs.org/clojure.core/pr-str)  - print Clojure data into a string so that Clojure can read them back
 
+<section style="background-color:#e1dede; padding: 1em 0.5em; margin: 2em 0em">
+
+<h2 id="golden-rules">Golden Rules</h2>
+
+<p><b>Always start with typing a <code>(</code></b> when writing code (unless you you just want to <i>refer</i> to a named piece of data) - thus preventing confusing both yourself and Calva :-).</p>
+
+<p><b>Function name comes always <i>first</i></b>, right after (: <code>(function-name ...)</code> - even <code>+</code> and similar.</p>
+</section>
+
 # VS Code and Calva 
 
 ## VS Code and Calva shortcuts
@@ -86,11 +91,11 @@ TIP: When you use `map`/`filter`, type all the arguments first before working ou
  You will need these shortcuts during the workshop:
 
 1. `Alt ENTER` - evaluate the current _top-level_ expression in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere at the line; if you experience troubles then move it to the very end)
-2. `Ctrl ENTER` - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to
-3. `Ctrl-Alt-right arrow` (OSX, Win; `.` instead of `->` in Linux) - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-alt-left arrow` (`,`) does the opposite but we will likely not need it)
+2. (`Ctrl ENTER` - evaluate the _thing the cursor is on/right after_ - similar to nr. 1 but useful if you want to evaluate a smaller thing inside a bigger expression, f.ex. to look at the value a name refers to)
+3. `Ctrl-Alt-right arrow` (OSX and Win; Linux: `.` instead of `->`) - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-alt-left arrow` (`,`) does the opposite but we will likely not need it)
    BEWARE: On OSX it might conflict with a system shortcut. Fix or use `Ctrl-W`, cut, paste.
 4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` (Win, ?Lin) - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
-5. (Bonus: `Cmd-|` (OSX; `Ctrl-Shift-|` on Windows, `Ctrl+Shift+\` Linux, cmd "Go to Bracket") jumps between the opening and closing parentheses.)
+5. (Bonus: `Cmd-|` (OSX; `Ctrl-Shift-\` on Windows, `Ctrl+Shift+\` Linux, cmd "Go to Bracket") jumps between the opening and closing parentheses.)
 
 (If you love shortcuts, check out https://calva.io/commands-top10/ There is also [Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf), [MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf), and [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) keyboard shortcut cheatsheet for VS Code.)
 

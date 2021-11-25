@@ -16,7 +16,8 @@
   ([action uri resp]
    (-> (if (.-ok resp)
          (.then (.text resp) edn/read-string)
-         (.reject js/Promise (js/Error. (str "Request returned non-OK status " (.-status resp)))))
+         (.reject js/Promise (js/Error. (str "Request returned non-OK status " (.-status resp) 
+                                             "Perhaps you forgot to change the :status of your response to 200?"))))
        (.catch (fn [err]
                  (js/console.error "Failed to " action uri err)
                  ::error)))))
