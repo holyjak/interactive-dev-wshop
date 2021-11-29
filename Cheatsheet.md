@@ -96,6 +96,7 @@ TIP: When you use `map`/`filter`, type all the arguments first before working ou
    BEWARE: On OSX it might conflict with a system shortcut. Fix or use `Ctrl-W`, cut, paste.
 4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` (Win, ?Lin) - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
 5. (Bonus: `Cmd-|` (OSX; `Ctrl-Shift-\` on Windows, `Ctrl+Shift+\` Linux, cmd "Go to Bracket") jumps between the opening and closing parentheses.)
+6. `Escape` - hide the inline results of evaluation (as per 1. or 2.) 
 
 (If you love shortcuts, check out https://calva.io/commands-top10/ There is also [Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf), [MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf), and [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) keyboard shortcut cheatsheet for VS Code.)
 
