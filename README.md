@@ -87,3 +87,4 @@ Finally, go to the beginning of `server.clj` and read the comments.
 ## Bonus resources
 
 * [Clojure(Script) Syntax in 15 minutes](https://github.com/shaunlebron/ClojureScript-Syntax-in-15-minutes)
+* [Interactive development - community resources](https://clojure.org/guides/repl/annex_community_resources) - including great demos
