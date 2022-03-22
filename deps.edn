@@ -11,15 +11,17 @@
 
  :aliases
  ;; NOTE: To build the frontend: `yarn install; npx shadow-cljs release main`
- {:frontend {:extra-paths ["frontend/src/main"]
+ {:workshop {} ; dummy alias to use during workshop to avoid 'Missing required argument for "-M ALIASES"' (as of 3/2022)
+  :frontend {:extra-paths ["frontend/src/main"]
              :extra-deps  {lilactown/helix      {:mvn/version "0.1.4"}
                            thheller/shadow-cljs {:mvn/version "2.16.4"}
                            binaryage/devtools   {:mvn/version "1.0.4"}}}
   :server {:main-opts ["-m" "interactive.server"]} ; TODO: Broken?! FF loads forever
-  :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "0.8.3"}}
+  :nrepl {:extra-deps {nrepl/nrepl {:mvn/version "0.9.0"}}
           :main-opts ["-m" "nrepl.cmdline" "--port" "52162"]}
-  ;; Deps added by Calva when running jack-in, as of 11/2021
+  ;; Deps added by Calva when running jack-in, as of Calva 2.0.256 (3/2022)
+  ;; Used by Dockerfile to pre-cache dependencies
   :calva {:extra-deps
-          {nrepl/nrepl {:mvn/version "0.8.3"}
-           cider/cider-nrepl {:mvn/version "0.26.0"}}
+          {nrepl/nrepl {:mvn/version "0.9.0"}
+           cider/cider-nrepl {:mvn/version "0.27.4"}}
           :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}}}

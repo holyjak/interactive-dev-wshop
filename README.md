@@ -14,16 +14,18 @@ For instructors: Read the [Instructor guide](Instructor%20guide.md).
 
 Instal Docker (see the [requirements](https://code.visualstudio.com/docs/remote/containers#_system-requirements)), [VS Code](https://code.visualstudio.com/), and its [extension Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)\*.
 
-_\*) Note: Last tested with Calva 2.0.225_
+_\*) Note: Last tested with Calva 2.0.256_
 
 Get a local copy of https://github.com/holyjak/interactive-dev-wshop (`git clone` or [download a zip file](https://github.com/holyjak/interactive-dev-wshop/archive/master.zip))<sup>1</sup>. 
 
 In VS Code, in the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (_View - Command Palette..._), search for *Remote-Containers: Open Folder in Container...* and navigate to the downloaded `interactive-dev-wshop` folder. This will open the project in a Docker container with all the dependencies pre-installed. It might take a few minutes.
 
-When finished, run the command (using Command Palette or its hotkey) *Calva: Start a Project REPL and Connect (aka Jack-in)* and
+(Tip: You might get an error about `npx shadow-cljs`, which you can ignore.)
 
-1. In the "Please select a project type" dropdown, select *deps.edn*
-2. In the next dropdown, when asked to "Pick an aliases to launch with" _just press OK_ without any alias
+When finished, run the command (using Command Palette or its hotkey) *Calva: Start a Project REPL and Connect (aka Jack-in)* and:
+
+1. In the "Please select a project type" dropdown, select **deps.edn**
+2. In the next dropdown, when asked to "Pick an aliases to launch with", select **workshop**
 
 A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`. After that you are all set up and can close VS Code for now. Repeat the same process just before the workshop (it should go faster then).
 
