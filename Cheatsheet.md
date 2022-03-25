@@ -1,5 +1,11 @@
-Workshop Cheat Sheet
-====================
+---
+title: "Cheatsheet - interactive dev (2 pages)"
+geometry: margin=0.7cm
+output: pdf_document
+---
+
+TIP: Starting the REPL, server - see [README - Connecting VS Code to the server REPL and starting the server](https://github.com/holyjak/interactive-dev-wshop#connecting-vs-code-to-the-server-repl-and-starting-the-server) (at the bottom).
+(Open `server.clj`, "Calva Load ..", Alt-Enter at the line `(-main)`.)
 
 # Clojure - A minimal Clojure subset
 
@@ -32,7 +38,7 @@ Catch: We _define_ the arguments of a function inside a vector but when we call 
 
 ## Collections and sequences
 
-[`map`](https://clojuredocs.org/clojure.core/map) - `(map <function> <sequence>)` - change each element; ex.: `(map (fn [n] (+ 1)) [1 2]) ; => (2 3)`
+[`map`](https://clojuredocs.org/clojure.core/map) - `(map <function> <sequence>)` - change each element; ex.: `(map (fn [n] (+ n 1)) [1 2]) ; => (2 3)`
 
 [`filter`](https://clojuredocs.org/clojure.core/filter) - `(filter <function> <sequence>)` - keep only the elements for which the function does not return nil or false
 

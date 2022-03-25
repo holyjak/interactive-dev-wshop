@@ -39,7 +39,7 @@ Next, read briefly through this file.
 
 You are going to experience what "interactive development" is about. The only language build around interactive development that I know is Clojure, so we will use that. You don't need to know it and the goal is not to teach it. I have minimized the amount of Clojure you will need to understand so that we can focus on the interactive development side. (And the code is thus not a good example of production code.)
 
-Your task is to implement the backend server for a people management service. When the frontend wants data, it POSTs to an endpoint with a list of the fields it wants. You need to deliver the data, from the built-in database - see the description of the tasks below.
+Your task is to implement a backend server for a people management service. When the frontend wants data, it POSTs to an endpoint with a list of the fields it wants. You need to deliver the data, from the built-in database - see the description of the tasks below.
 
 The instructor will give you a brief [introduction into Clojure syntax (3 slides)](doc/Clojure%20syntax%20intro%20slides.pdf), will go through the [Cheatsheet](Cheatsheet.md) for Clojure and key VS Code/Calva shortcuts with you, and will walk you through the code and provide support and help.
 

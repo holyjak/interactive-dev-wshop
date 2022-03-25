@@ -12,7 +12,11 @@ From experience, ~with junior developers~:
 * Warm-up: ~1h - 1.5h
 * Tasks:  ~1h - 1.5h (but can stop anytime)
 
+Whole workshop, with experienced folks: ± 2h
+
 ### Brief intro
+
+_NOTE: First check who ins't done preparing and let them run it while listening_
 
 Why are we doing this? What will you gain? What are we going to do?
 
@@ -21,6 +25,8 @@ without ever restarting it. It is about trying out each new tiny snippet of code
 >
 > What is a REPL? An acronym for Read-Eval-Print-Loop and you can think of it as a coding terminal into your running application: you send it commands and new code and get back data.
 
+Now describe briefly the task and warm-up exercises.
+
 ### Brief Clojure syntax intro
 
 1. Talk through the [Clojure syntax intro slides](doc/Clojure%20syntax%20intro%20slides.pdf) here [or online](https://docs.google.com/presentation/d/1_toJRBJeBrOO6sDtjxSNoq8A3EVE3VxdqXXcOKp1-kM/edit?usp=sharing) (also have a look at the one with the speaker notes).
@@ -28,16 +34,16 @@ without ever restarting it. It is about trying out each new tiny snippet of code
 
 ### Get up and running!
 
-Is everybody ready, with the prerequisities (this folder, VS Code + Calva, Docker)?
-Has everybody browsed through the README and the Cheatsheet?
+Is everybody ready, with the prerequisites (this folder, VS Code + Calva, Docker)?
+Has everybody browsed through the README?
 
 Is everybody familiar with map and filter?
 
-Everybody & me: Start the server, browse to [localhost:8088](http://localhost:8088/).
+Everybody & me: Start the server (-> Cheatsheet), browse to [localhost:8088](http://localhost:8088/).
+
+_BEWARE: Folks fail at this => point them to instructions then show slowly on screen._
 
 (Self: Ready to develop handle-people?)
-
-NOTE: Breaks?
 
 ### Code walk-through
 
@@ -54,13 +60,14 @@ They should review the _Calva shortcuts_ from the cheatsheet and, ideally, have 
 Ask them to carefully read the comments, especially the 'ESSENTIAL TIPS' part.
 Then let them work through the exercises in the top comment block, walking around, checking on them, helping.
 
+BREAK TIME!
 ### Tasks
 
 NOTE: Mention that people can look at the `final-code` branch to see a correct solution, if they struggle.
 
 #### Guided task 1
 
-Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... . At the end use the comment block to invoke the handler with the captured xreq and verify the output.
+Complete the task 1 on the screen, explaining - use `def` to capture the request (and explain its use in deving vs. prod), explore it in the REPL, ... . At the end use the comment block to invoke the handler with the captured _req and verify the output.
 
 Explain: We use `def` to capture local arguments (ex.: function inputs) and data that is expensive
 to retrieve (ex.: DB data) so that we can play with small pieces of code out of context. Mention that def creates a shared, mutable "variable" and thus we never, ever do this in prod code.
@@ -93,3 +100,13 @@ You have now experienced what interactive, REPL-driven development is about:
 * Get an immediate feedback on what your code does and on what data is there
 
 You have learned to proceed in these tiny, verified steps and to capture local arguments as globals (using `def`) so that you can play with a piece of code on its own.
+
+----
+
+# Handouts
+
+To print PDF: 
+
+    docker run --rm --volume (pwd):/data pandoc/latex Cheatsheet.md -o Cheatsheet.pdf
+
+Make sure there is a pointer to the next side from the first one!
