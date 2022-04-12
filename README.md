@@ -1,6 +1,6 @@
-# The "Experience interactive development" workshop
+# The workshop "Experience interactive development, creating a REST service without a single restart"
 
-Join us to experience what interactive development (also known as REPL-driven development) is about! Feel the joy of immediate feedback, growing your program in tiny increments, of restart-less development!
+Join us to experience what interactive development (also known as REPL-driven development) is about. Feel the joy of immediate feedback, growing your program in tiny increments, of restart-less development! You are likely used to the code-compile-restart cycle. Here you will code and play with a REST service without a single restart, talk to the database from your editor, and discover unexpected productivity.
 
 Suitable for anyone who has some experience with programming. Having experience with JavaScript is pretty useful (since a few key things there are similar to Clojure, which we will use).
 
