@@ -14,7 +14,7 @@ For instructors: Read the [Instructor guide](Instructor%20guide.md).
 
 Instal Docker (see the [requirements](https://code.visualstudio.com/docs/remote/containers#_system-requirements)), [VS Code](https://code.visualstudio.com/), and its [extension Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)\*.
 
-_\*) Note: Last tested with Calva 2.0.256_
+_\*) Note: Last tested with Calva 2.0.303_
 
 Get a local copy of https://github.com/holyjak/interactive-dev-wshop (`git clone` or [download a zip file](https://github.com/holyjak/interactive-dev-wshop/archive/master.zip))<sup>1</sup>. 
 
@@ -75,7 +75,7 @@ Before you can start coding, you need to start the REPL for evaluating the code 
 
 Make sure that you have opened the project in a _Remote Container_ as described above under *[Preparation prior to the workshop](#preparation-prior-to-the-workshop)*, and follow those instructions also to also start and connect to a REPL (a.k.a. "jack-in").
 
-Load the server code into the REPL - open `server.clj` (_menu - Go - Go to File_) and run _Calva: Load Current File and Dependencies_ (_menu - View - Command Palette..._).
+Load the server code into the REPL - open `server.clj` (_menu - Go - Go to File_) and run _Calva: Load/Evaluate Current File and its Requires/Dependencies_ (_menu - View - Command Palette..._).
 (The line _; Evaluating file: server.clj_ should appear in the _output.calva-repl_ window.)
 
 Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Alt+ENTER`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the _output.calva-repl_ window. Also, VS Code pops up the following message:

@@ -6,8 +6,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/java:${VARIANT}
 # # RUN apk update \
 # #     && apk add --no-cache <your-package-list-here>
 
-# Install Clojure - see https://github.com/Quantisan/docker-clojure/blob/master/target/openjdk-14-slim-buster/tools-deps/Dockerfile
-ENV CLOJURE_VERSION=1.10.3.1087
+# Install Clojure - see https://github.com/Quantisan/docker-clojure/blob/master/target/eclipse-temurin-18-jdk-focal/tools-deps/Dockerfile
+ENV CLOJURE_VERSION=1.11.1.1155
 WORKDIR /tmp
 RUN \
 apt-get update && \
@@ -15,7 +15,7 @@ apt-get install -y curl make rlwrap wget && \
 rm -rf /var/lib/apt/lists/* && \
 wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && \
 sha256sum linux-install-$CLOJURE_VERSION.sh && \
-echo "fd3d465ac30095157ce754f1551b840008a6e3503ce5023d042d0490f7bafb98 *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && \
+echo "7eb9aa2ecc6c0abfdb1578d4b99ca7c2055111aafa38524a12a6fb76fe01f30b *linux-install-$CLOJURE_VERSION.sh" | sha256sum -c - && \
 chmod +x linux-install-$CLOJURE_VERSION.sh && \
 ./linux-install-$CLOJURE_VERSION.sh && \
 clojure -e "(clojure-version)" && \
