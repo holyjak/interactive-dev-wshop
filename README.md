@@ -35,7 +35,15 @@ For a setup-less development environment with an in-browser VS Code, you can use
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
 
-(Requires login via GitHub / GitLab / Bitbucket. Gitpod offers enough free usage time for this workshop.)
+Gitpod requires login via GitHub / GitLab / Bitbucket and offers enough free usage time for this workshop.
+
+NOTE: You may get the following two pop-ups:
+
+> A service is available on port 6080
+> 
+> A service is available on port 5900
+
+If that happens then just close them.
 
 ### Intro
 
@@ -79,7 +87,7 @@ Before you can start coding, you need to start the REPL - the "programming termi
 
 ##### Start the REPL
 
-In the menu (in GitPod it is the ☰ in the top-left corner) select _View - Command Palette... - [Calva: Start a Project REPL and Connect (aka Jack-In)](https://calva.io/connect/)_ ![](doc/images/jack-in-1.png) and, in the "Please select a project type" dropdown, select **Experience interactive development workshop**.
+In the menu (in GitPod it is the ☰ in the top-left corner) select _View - Command Palette... - [Calva: Start a Project REPL and Connect (aka Jack-In)](https://calva.io/connect/)_ ![](doc/images/jack-in-1.png) and, in the "Please select a project type" dropdown, select **Workshop Experience interactive development**.
 
 A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`.
 

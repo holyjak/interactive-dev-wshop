@@ -231,7 +231,8 @@
     (println (str "Jetty running on: " uri))
     (try
       (.browse (java.awt.Desktop/getDesktop) (java.net.URI. uri))
-      (catch java.awt.HeadlessException _))))
+      (catch java.awt.HeadlessException _)
+      (catch Throwable _))))
 
 (comment
   (-main)

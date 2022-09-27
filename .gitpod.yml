@@ -8,9 +8,6 @@ ports:
   - port: 8088 # the webapp, served by our server (see `server.clj`)
     onOpen: open-browser
     visibility: public
-  - port: 52162 # nREPL
-    onOpen: ignore
-    visibility: public
   
 tasks:
   - name: Prepare project, Calva deps

@@ -1,10 +1,10 @@
 {
     "calva.replConnectSequences": [
         {
-            "name": "Experience interactive development workshop",
+            "name": "Workshop Experience interactive development",
             "projectType": "deps.edn",
             "cljsType": "none",
-            "afterCLJReplJackInCode": "(println \"Welcome to the workshop!\nNow open src/interactive/server.clj,\nload the file into Calva, and run its `(-main)`\")",
+            "afterCLJReplJackInCode": "(do (require 'interactive.server) (println \"Welcome to the workshop!\nNow open src/interactive/server.clj,\nload the file into Calva, and run its `(-main)`\"))",
             "menuSelections": {
                 "cljAliases": ["workshop"]
             }
