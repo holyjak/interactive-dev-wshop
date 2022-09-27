@@ -5,7 +5,7 @@ output: pdf_document
 ---
 
 TIP: Starting the REPL, server - see [README - Connecting VS Code to the server REPL and starting the server](https://github.com/holyjak/interactive-dev-wshop#connecting-vs-code-to-the-server-repl-and-starting-the-server) (at the bottom).
-(Open `server.clj`, "Calva Load ..", Alt-Enter at the line `(-main)`.)
+(In short: run "Calva Start REPL.." with _Experience interactive development workshop_ and then open `server.clj`, "Calva Load ..", Alt-Enter at the line `(-main)`.)
 
 # Clojure - A minimal Clojure subset
 
@@ -36,7 +36,7 @@ To get the value, use the keyword as a function of the map: `(:my-key my-map)`
 
 Catch: We _define_ the arguments of a function inside a vector but when we call it, we include them directly: `(defn plus [x y] (+ x y))` -> `(plus 1 2)`
 
-## Collections and sequences
+## Collection and sequence function
 
 [`map`](https://clojuredocs.org/clojure.core/map) - `(map <function> <sequence>)` - change each element; ex.: `(map (fn [n] (+ n 1)) [1 2]) ; => (2 3)`
 

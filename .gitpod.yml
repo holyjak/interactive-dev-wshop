@@ -1,0 +1,23 @@
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - betterthantomorrow.calva
+ports:
+  - port: 8088 # the webapp, served by our server (see `server.clj`)
+    onOpen: open-browser
+    visibility: public
+  - port: 52162 # nREPL
+    onOpen: ignore
+    visibility: public
+  
+tasks:
+  - name: Prepare project, Calva deps
+    init: clojure -R:workshop:calva -Spath
+  - name: Open files # does not work
+    command: code src/interactive/server.clj
+
+github:
+  prebuilds:
+    main: true

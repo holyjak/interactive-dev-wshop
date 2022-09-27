@@ -12,6 +12,11 @@ For instructors: Read the [Instructor guide](Instructor%20guide.md).
 
 ### Preparation prior to the workshop
 
+You can either run the workshop app locally, which requires some setup, or you can run it in a Gitpod-provided remote development environment, with an in-browser VS Code.
+
+Follow the appropriate instructions below and then read briefly through the rest of this file.
+#### Variant 1: Local development
+
 Instal Docker (see the [requirements](https://code.visualstudio.com/docs/remote/containers#_system-requirements)), [VS Code](https://code.visualstudio.com/), and its [extension Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)\*.
 
 _\*) Note: Last tested with Calva 2.0.303_
@@ -22,18 +27,15 @@ In VS Code, in the [Command Palette](https://code.visualstudio.com/docs/getstart
 
 (Tip: You might get an error about `npx shadow-cljs`, which you can ignore.)
 
-When finished, run the command (using Command Palette or its hotkey) *Calva: Start a Project REPL and Connect (aka Jack-in)* and:
-
-1. In the "Please select a project type" dropdown, select **deps.edn**
-2. In the next dropdown, when asked to "Pick an aliases to launch with", select **workshop**
-
-A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`. After that you are all set up and can close VS Code for now. Repeat the same process just before the workshop (it should go faster then).
-
-You can watch a silent [screencast of me going through the preparations](https://youtu.be/pBKej6KYYCY) (11/2021), which might help you if you run into any troubles. (The screencast goes a little further, to evaluating the code and starting the backend server.)
-
 <sup>1</sup>) Beware: This directory must be at a place where both VS Code and Docker can see it. That might be an issue under Windows and WSL based on your setup.
 
-Next, read briefly through this file.
+#### Variant 2: Remote dev env with Gitpod
+
+For a setup-less development environment with an in-browser VS Code, you can use Gitpod:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
+(Requires login via GitHub / GitLab / Bitbucket. Gitpod offers enough free usage time for this workshop.)
 
 ### Intro
 
@@ -69,16 +71,28 @@ For me it works best to structure Calva as shown below, i.e. `server.clj` on the
 
 ### Running the server
 
-Before you can start coding, you need to start the REPL for evaluating the code and for running the server.
+Before you can start coding, you need to start the REPL - the "programming terminal" and runtime environment we will be using - for evaluating the code and for running the server.
 
 #### Connecting VS Code to the server REPL and starting the server
 
-Make sure that you have opened the project in a _Remote Container_ as described above under *[Preparation prior to the workshop](#preparation-prior-to-the-workshop)*, and follow those instructions also to also start and connect to a REPL (a.k.a. "jack-in").
+[Local dev] Make sure that you have opened the project in a _Remote Container_ as described above under *[Preparation prior to the workshop](#preparation-prior-to-the-workshop)*.
 
-Load the server code into the REPL - open `server.clj` (_menu - Go - Go to File_) and run _Calva: Load/Evaluate Current File and its Requires/Dependencies_ (_menu - View - Command Palette..._).
+##### Start the REPL
+
+In the menu (in GitPod it is the ☰ in the top-left corner) select _View - Command Palette... - [Calva: Start a Project REPL and Connect (aka Jack-In)](https://calva.io/connect/)_ ![](doc/images/jack-in-1.png) and, in the "Please select a project type" dropdown, select **Experience interactive development workshop**.
+
+A new tab called `output.calva-repl` should open and eventually contain `; Jack-in done.`.
+
+##### Start the server
+
+Load the server code into the REPL - open `server.clj` (via _menu - Go - Go to File_) and run _Calva: Load/Evaluate Current File and its Requires/Dependencies_ (via _menu - View - Command Palette..._).
 (The line _; Evaluating file: server.clj_ should appear in the _output.calva-repl_ window.)
 
-Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Alt+ENTER`. This should start the server. The line _Jetty running on: http://localhost:8088/_ should be displayed in the _output.calva-repl_ window. Also, VS Code pops up the following message:
+Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Alt+ENTER`. This should start the server. The line:
+
+>  Jetty running on: http://localhost:8088/
+
+should be displayed in the _output.calva-repl_ window. Also, VS Code pops up the following message:
 
 ![Code: App is running popup](./doc/vs-code-open-in-browser.png)
 

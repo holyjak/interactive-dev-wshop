@@ -16,16 +16,21 @@ Whole workshop, with experienced folks: ± 2h
 
 ### Brief intro
 
-_NOTE: First check who ins't done preparing and let them run it while listening_
+_NOTE: First check who isn't done preparing and let them run it while listening_
 
-Why are we doing this? What will you gain? What are we going to do?
+Welcome & thank everyone.
 
+Answer: Why are we doing this? What will you gain? What are we going to do?
+
+> Why are we here? Why this workshop? B/c I want to share the joy of interactive development and allow you to taste it. 
+> Now I don't know why you are here but hopefully we will find out :-).
+>
 > There are two styles of development: the common compile/transpile - wait - restart - wait - recreate application state one and the interactive one. This interactive, REPL-driven development is about developing your application _while_ it is running,
 without ever restarting it. It is about trying out each new tiny snippet of code _in the context of the running application_ (i.e. with access to its data, state, and connections) and thus about growing the code in a series of small, tested steps.
 >
 > What is a REPL? An acronym for Read-Eval-Print-Loop and you can think of it as a coding terminal into your running application: you send it commands and new code and get back data.
 
-Now describe briefly the task and warm-up exercises.
+Now describe briefly the tasks and warm-up exercises. Mention we will use a minimalist subset of Clojure & why.
 
 ### Brief Clojure syntax intro
 
@@ -43,7 +48,7 @@ Everybody & me: Start the server (-> Cheatsheet), browse to [localhost:8088](htt
 
 _BEWARE: Folks fail at this => point them to instructions then show slowly on screen._
 
-(Self: Ready to develop handle-people?)
+(Self: Ready to develop `handle-people?`)
 
 ### Code walk-through
 
@@ -72,7 +77,7 @@ Complete the task 1 on the screen, explaining - use `def` to capture the request
 Explain: We use `def` to capture local arguments (ex.: function inputs) and data that is expensive
 to retrieve (ex.: DB data) so that we can play with small pieces of code out of context. Mention that def creates a shared, mutable "variable" and thus we never, ever do this in prod code.
 
-Then let everyone to finish the task for herself.
+Then let everyone finish the task for themselves.
 
 TIPS: 
 
