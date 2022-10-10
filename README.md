@@ -93,8 +93,11 @@ A new tab called `output.calva-repl` should open and eventually contain `; Jack-
 
 ##### Start the server
 
-Load the server code into the REPL - open `server.clj` (via _menu - Go - Go to File_) and run _Calva: Load/Evaluate Current File and its Requires/Dependencies_ (via _menu - View - Command Palette..._).
+[Gitpod] Load the server code into the REPL - open `server.clj` (via _menu - Go - Go to File_) and run _Calva: Load/Evaluate Current File and its Requires/Dependencies_ (via _menu - View - Command Palette..._).
 (The line _; Evaluating file: server.clj_ should appear in the _output.calva-repl_ window.)
+
+* Note: Should not be necessary locally as the server should be started automatically. In Gitpod it mostly fails to do so.
+ 
 
 Now, inside `server.clj`, put your cursor on the line `(-main)` which is nearly at the very end of the file and evaluate it in the REPL via `Alt+ENTER`. This should start the server. The line:
 
