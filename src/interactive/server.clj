@@ -45,36 +45,51 @@
   ;; (Note: ` in comments delimits code and is not part of the code)
   ;;
   ;; 1. Create a map with :name John and :age 42 and assign it the name `person`
-  :your-code-comes-here...
+  ;; NOTE: If you have GitHub Copilot, now is the time to disable it or 
+  ;;       you won't learn anything.
+  (def person {:name "John" :age 42})
 
   ;; 2. Create a subset of the person map with only the name (tip: use `select-keys`)
+  (select-keys person [:name])
 
   ;; 3. Get the age out of the person map (tip: a keyword can be used as 
   ;;    function of a map)
+  (:age person)
 
   ;; 4. Verify that the person's age is 42 (tip: use `=`)
+  (= 42 (:age person))
 
   ;; 5.1 Make an anonymous function that takes a single argument and returns it
+  (fn [x] x)
 
   ;; 5.2 Call it (wrap with `()`, send an argument).
+  ((fn [x] x) 42)
 
   ;; 6.1 Make the function `fortytwo?` that takes a person and tells you whether
   ;; s/he is 42 (tip: use `def` and `fn`; then rewrite it to use just `defn`).
+  (def fortytwo? (fn [person] (= 42 (:age person))))
 
   ;; 6.2 Call it.
+  (fortytwo? person)
 
   ;; 7. Create a vector containing the numbers 40 - 45 and assign it the name 
   ;;    `nums` (just type them out 😀)
+  (def nums [40 41 42 43 44 45])
 
   ;; 8. Remove 42 from it (tip: use `fn` and `filter` and `not=`)
+  (filter (fn [x] (not= 42 x)) nums)
 
-  ;; 9. Increase each element of `nums` by 3 and then get the first one 
+  ;; 9. Increase each element of `nums` by 3 and then get the first one (43)
   ;;    (use `map`, `+`, and `first`)
   ;;    Tip: Do this in 4 steps, trying each step before coding further: 
   ;;    1. Make an anomymous fn that increment its argument, test it - see #5.2
   ;;    2. Map it over `nums` - similar to #7
   ;;    3. Extract the first element
+  (first (map (fn [x] (+ x 3)) nums))
   ;;    4. Now refactor the code, leveraging `->>`
+  (->> nums
+       (map (fn [x] (+ x 3)))
+       first)
 
   ,) ; end of (comment...)
 
@@ -125,10 +140,11 @@
   ;;                if confused, look at what you did before (and the Cheatsheet)
   {:status 200
    :headers {"Content-Type" "text/plain"}
-   :body (pr-str [])})
+   :body (pr-str (map (fn [p] (select-keys p (:body req))) (fetch-all-people)))})
 
 (comment
   ;; <your experimentations come here>
+  (map (fn [p] (select-keys p (:body _req))) (fetch-all-people))
   nil)
 
 (defn handle-person 
@@ -143,12 +159,20 @@
   ;;           See task #2 and exercises #8, #9
   ;;      Lesson: Capture arguments as a global var, evolve the code via trying
   ;;              snippets in the REPL.
-  {:status 500 ; TODO: Fix the status
+  {:status 200
     :headers {"Content-Type" "text/plain"}
-    :body (pr-str "Not implemented")}) ; TODO: Return the data
+    :body (pr-str (->> (fetch-all-people)
+                       (filter (fn [p] (= (:email p) email)))
+                       (map (fn [p] (select-keys p (:body req))))
+                       first))})
 
 (comment
-  ;; <your experimentations come here>
+  ;; <your experimentations come here> 
+  (let [req _req, email "rich@example.com"]
+    (->> (fetch-all-people)
+         (filter (fn [p] (= (:email p) email)))
+         (map (fn [p] (select-keys p (:body req))))
+         first))
   nil)
 
 (defn handle-person-update 
@@ -162,14 +186,22 @@
   ;;     Tip: Use `let` to make a named constant out of the person data.
   ;;          See task #3 and exercises #3, #9
 
-  ;; TODO: <your code here>
+  (let [person (->> (fetch-all-people)
+                    (filter (fn [p] (= (:email p) email)))
+                    first)]
+    (update-person-first-name (:id person) (:fname (:body req))))
   
-  {:status 500 ; TODO: Fix the status
-   :headers {"Content-Type" "text/plain"} 
-   :body (pr-str "Not implemented")}) ; FYI: The UI ignores the body
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body (pr-str "Done!")}) ; FYI: The UI ignores the body
 
 (comment
   ;; <your experimentations come here>
+  (let [req _req, email "rich@example.com"
+        person (->> (fetch-all-people)
+                    (filter (fn [p] (= (:email p) email)))
+                    first)]
+    (update-person-first-name (:id person) (:fname (:body req))))
   nil)
 
 ;;------------------------------------------ ROUTING, SERVER ETC. (DO NOT TOUCH)
