@@ -94,6 +94,10 @@ TIP: When you use `map`/`filter`, type all the arguments first before working ou
 
 ## VS Code and Calva shortcuts
 
+TIP: **Assign your own shortcut** - type the command name into the [Command Palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and then click the gear ⚙️ icon next to it and edit its Keybinding:
+
+![VS Code Command Palette config](doc/images/vscode-cmd-palette-assign-shortcut.png)
+
  You will need these shortcuts during the workshop:
 
 1. `Alt ENTER` - evaluate the current _top-level_ expression in the REPL - i.e. a function definition, an expression inside a `comment` block (your cursor can be ± anywhere at the line; if you experience troubles then move it to the very end)
@@ -101,6 +105,7 @@ TIP: When you use `map`/`filter`, type all the arguments first before working ou
 3. `Ctrl-Alt-right arrow` (OSX and Win; Linux: `.` instead of `->`) - "slurp" the following element into the current list: `(def| x) 42` -> `(def| x 42)` (`ctrl-alt-left arrow` (`,`) does the opposite but we will likely not need it)
    BEWARE: On OSX it might conflict with a system shortcut. Fix or use `Ctrl-W`, cut, paste.
 4. `Ctrl-W` (OSX) / `Shift-Alt-right arrow` (Win, ?Lin) - expand selection (press repeatedly) - useful to select the thing you will move/change (often in combination with Cut and Paste)
+   * Use it to wrap with `(`...`)` or similar: select the expression to wrap, type the opening `(`, `[`, `{`, or `"`.
 5. (Bonus: `Cmd-|` (OSX; `Ctrl-Shift-\` on Windows, `Ctrl+Shift+\` Linux, cmd "Go to Bracket") jumps between the opening and closing parentheses.)
 6. `Escape` - hide the inline results of evaluation (as per 1. or 2.) 
 
